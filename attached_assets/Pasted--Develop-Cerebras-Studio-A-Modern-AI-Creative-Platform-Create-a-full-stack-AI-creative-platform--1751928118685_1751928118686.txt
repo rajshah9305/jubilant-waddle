@@ -1,0 +1,127 @@
+
+Develop "Cerebras Studio": A Modern AI Creative Platform
+
+Create a full-stack AI creative platform named "Cerebras Studio" with four specialized AI studios: Text Generation, Code Generation, Document AI, and Creative Writing.
+
+
+Core Platform Requirements
+
+* Responsive Dashboard: Animated 3D background.
+* Chat-style Interface: For each studio.
+* Project Management System: To save, load, and manage projects.
+* API Key Management: Secure sidebar option for users to store API keys with visual validation (green/red dot).
+* Real-time Metrics: Display "Tokens Used" and "Processing Speed" in studio input areas.
+* File Upload: Robust drag-and-drop file upload functionality within studios.
+* API Key Prompt: Modal popup if a user attempts to use a studio without a valid API key.
+
+
+Technical Stack
+
+* Frontend: React with Vite, Tailwind CSS, Framer Motion (for animations), Three.js (for 3D graphics).
+* Backend: Flask with SQLAlchemy (ORM), CORS enabled.
+* UI Components: Lucide React icons, custom-built components.
+* Database: PostgreSQL (production), SQLite (development) with migration support and seed data.
+* AI Integration: Cerebras API (streaming and non-streaming responses), mock responses for demo.
+
+
+Design & Aesthetics
+
+* Overall Philosophy: Clean, contemporary, minimalist interface with bold typography, geometric shapes, structured layouts, and subtle shadows. Focus on content and functionality with strategic depth.
+* Color Scheme: Primary orange (#ff8c00) and black, complemented by clean whites and grays.
+* Dashboard (Landing Page):
+    * Split-screen hero layout: Large typography on the left, dynamic 3D visual on the right (replacing static placeholder).
+    * Asymmetrical grid (e.g., 2x2 varying sizes) for studio cards with consistent orange gradient theme and hover animations.
+    * Bold section headers with underline accents.
+    * Clean, structured navigation with ample spacing.
+* Studio Interface:
+    * Sidebar navigation for switching studios.
+    * Defined message bubbles, clean input area with floating action button.
+    * Organized toolbar for actions (copy, thumbs up/down, configurations).
+    * Streaming response simulation and animated typing indicators.
+* Navigation: Fixed header with logo and main navigation. Mobile hamburger menu, robust route handling.
+* Layout Principles & Styling:
+    * Exclusive use of Tailwind CSS.
+    * CSS Grid for complex layouts, consistent 8px spacing system.
+    * Bold section dividers, clear content hierarchy, minimal rounded corners (4-8px max).
+    * Flat design with strategic shadows, high contrast text, clean button designs.
+* Modern Component Styling:
+    * Navigation: Clean horizontal bar, logo left, menu right, subtle background, sharp bottom border, solid color hover states. Full-screen overlay menu for mobile.
+    * Buttons: Solid backgrounds, clean edges, bold text, slight background shift on hover, clear primary/secondary hierarchy.
+    * Cards: Sharp or minimal rounding (4px max), clean drop shadows (e.g., 0 2px 8px rgba(0,0,0,0.1)), defined borders, structured content.
+    * Typography: Bold headlines with strong hierarchy, generous line spacing, limited font weights (e.g., 400, 600, 800).
+* Layout Grid System:
+    * 12-column responsive grid with consistent gutters.
+    * Breakpoints: mobile (320px), tablet (768px), desktop (1024px).
+    * Consistent spacing (8px base unit).
+    * Full-width hero sections, contained content areas (max-width: 1200px), clear section breaks.
+    * Consistent padding (16px, 24px, 32px, 48px) and margin system.
+    * Prefer left-aligned text, center elements only when appropriate.
+* Clean Animation Approach:
+    * Micro-Interactions: Smooth hover states (0.2s ease), clean page transitions, subtle loading states, purposeful focus indicators.
+    * Layout Animations: Smooth content reveals on scroll, clean modal/dropdown animations, organized list item reveals, structured form interactions.
+    * Performance Focus: Transform-based animations, respect reduced motion preferences, fast transitions.
+    * Functional Animations: Clear loading indicators, smooth navigation, helpful user feedback, organized content state changes.
+
+
+Backend API Endpoints (Flask)
+
+* POST /api/ai/generate: For streaming text generation.
+* POST /api/ai/generate-simple: For non-streaming generation.
+* GET /api/ai/health: Health check endpoint.
+* Features: Mock AI responses, support for studio_type parameter (text, code, document, creative), robust error handling, validation, CORS support, environment variables for API keys, proper HTTP status codes.
+* Response Formats:
+    * Streaming: JSON chunks with content and done status.
+    * Simple: Single JSON response with content.
+    * Different mock responses for each studio type.
+
+
+Database Models (SQLAlchemy)
+
+* User Model: Basic authentication, profile information, relationship to projects.
+* Project Model: Title, content, studio type, timestamps (creation/modification), user ownership, studio categorization.
+
+
+3D Graphics Component (Three.js)
+
+* Dedicated React component for dashboard background.
+* Animated wireframe icosahedron geometry with custom shader material (orange to black gradient).
+* Smooth rotation, responsive canvas, proper cleanup on unmount, mobile optimization.
+* Utilize React hooks for lifecycle, robust resize handling, time uniforms for gradient animation, wireframe mode rendering, ambient and point lighting.
+
+
+Deployment & Production Readiness
+
+* Frontend Build: Vite for React, production optimization, static file serving, environment variables.
+* Backend Deployment: Flask for production, static file serving (SPA), database initialization, CORS, security headers.
+* Full-Stack Integration: Single server setup (frontend + API), catch-all routing for SPA, distinct dev/prod configurations.
+* User Authentication: JWT token-based (registration/login, protected routes, session management).
+* Project Management: Save/load conversations, organize, export content, search/filter.
+* Real AI Integration: Cerebras API (streaming, error recovery, rate limiting).
+* UI Enhancements: Dark/light mode, keyboard shortcuts, auto-save, accessibility improvements.
+
+
+Awwwards.com-Worthy Enhancements (Premium Features)
+
+Implement these features to achieve an Awwwards.com-worthy project:
+* Enhanced UI/UX: Physics-based interactions, advanced animations, custom cursor.
+* AI Personality System: Four distinct AI assistants with unique personalities.
+* Sound Design: Web Audio API integration with contextual sound effects.
+* Performance Analytics: Real-time metrics dashboard with beautiful visualizations.
+* Creative Challenges: Gamified AI interaction with difficulty levels and rewards.
+* AI Collaboration Hub: Multi-AI coordination for complex creative tasks.
+* Intelligent Suggestions: AI-powered recommendations with confidence scoring.
+* Advanced Search: Sophisticated filtering and search capabilities.
+* Morphing UI Elements: Dynamic components that adapt to context.
+* Real-time Features: Live typing indicators, streaming responses, activity metrics.
+
+
+Documentation & Setup
+
+Provide comprehensive documentation and a quick-start setup script.
+* Clear setup instructions.
+* Comprehensive API documentation.
+* Environment variable guide.
+* Detailed deployment steps for various platforms (Vercel, Docker, VPS, Kubernetes).
+* Automated testing suite.
+* One-command automated deployment script (e.g., setup.sh).
+
