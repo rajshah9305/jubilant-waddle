@@ -61,9 +61,9 @@ export default function Dashboard() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section - Premium Design */}
-      <section className="min-h-screen bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-screen flex items-center">
+      {/* Hero Section - Compact Design */}
+      <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content - Enhanced Premium Design */}
             <motion.div 
@@ -76,20 +76,11 @@ export default function Dashboard() {
               <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
               <div className="absolute top-1/2 -left-10 w-20 h-20 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-2xl animate-bounce"></div>
               
-              <motion.div
-                className="inline-block"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <span className="bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 px-6 py-3 rounded-full text-sm font-bold border border-orange-200 shadow-lg backdrop-blur-sm">
-                  ✨ Powered by Advanced AI Technology
-                </span>
-              </motion.div>
+
 
               <div className="space-y-6">
                 <motion.h1 
-                  className="text-6xl md:text-8xl font-black text-gray-900 leading-[0.85] tracking-tight"
+                  className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -104,7 +95,7 @@ export default function Dashboard() {
                   >
                     Studio
                     <motion.div
-                      className="absolute -bottom-3 left-0 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
+                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ duration: 1.2, delay: 1 }}
@@ -113,75 +104,65 @@ export default function Dashboard() {
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-2xl text-gray-600 max-w-2xl leading-relaxed font-light"
+                  className="text-lg text-gray-600 max-w-xl leading-relaxed font-light"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Unleash your creativity with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories with cutting-edge artificial intelligence.
+                  Unleash your creativity with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
                 </motion.p>
               </div>
               
               <motion.div 
-                className="flex flex-col sm:flex-row gap-6"
+                className="flex justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-12 py-6 text-xl font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border-0 rounded-2xl relative overflow-hidden group"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border-0 rounded-xl relative overflow-hidden group"
                   onClick={() => handleStudioClick('text')}
                 >
-                  <span className="flex items-center space-x-3 relative z-10">
+                  <span className="flex items-center space-x-2 relative z-10">
                     <span>Start Creating</span>
                     <motion.div
                       initial={{ x: 0 }}
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 400 }}
-                      className="text-2xl"
+                      className="text-xl"
                     >
                       →
                     </motion.div>
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-3 border-gray-300 text-gray-700 px-12 py-6 text-xl font-bold hover:border-orange-500 hover:text-orange-600 hover:bg-orange-50 transition-all duration-300 rounded-2xl backdrop-blur-sm hover:shadow-xl"
-                >
-                  <span className="flex items-center space-x-3">
-                    <span className="text-2xl">▶</span>
-                    <span>Watch Demo</span>
-                  </span>
-                </Button>
               </motion.div>
 
-              {/* Enhanced Real-time Metrics */}
+              {/* Compact Real-time Metrics */}
               <motion.div 
-                className="grid grid-cols-2 gap-8 pt-8"
+                className="grid grid-cols-2 gap-4 pt-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 <motion.div 
-                  className="bg-white/90 backdrop-blur-xl p-8 rounded-3xl border border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden group"
-                  whileHover={{ y: -8 }}
+                  className="bg-white/90 backdrop-blur-xl p-4 rounded-2xl border border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+                  whileHover={{ y: -4 }}
                 >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                  <div className="text-5xl font-black bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-4 relative z-10">2.4M+</div>
-                  <div className="text-gray-600 font-bold text-lg relative z-10">Tokens Generated</div>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-xl group-hover:scale-125 transition-transform duration-300"></div>
+                  <div className="text-3xl font-black bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 relative z-10">2.4M+</div>
+                  <div className="text-gray-600 font-semibold text-sm relative z-10">Tokens Generated</div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </motion.div>
                 <motion.div 
-                  className="bg-white/90 backdrop-blur-xl p-8 rounded-3xl border border-gray-200/50 shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-105 relative overflow-hidden group"
-                  whileHover={{ y: -8 }}
+                  className="bg-white/90 backdrop-blur-xl p-4 rounded-2xl border border-gray-200/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 relative overflow-hidden group"
+                  whileHover={{ y: -4 }}
                 >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500"></div>
-                  <div className="text-5xl font-black bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-4 relative z-10">150ms</div>
-                  <div className="text-gray-600 font-bold text-lg relative z-10">Avg Response Time</div>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                  <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-xl group-hover:scale-125 transition-transform duration-300"></div>
+                  <div className="text-3xl font-black bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent mb-2 relative z-10">150ms</div>
+                  <div className="text-gray-600 font-semibold text-sm relative z-10">Avg Response Time</div>
+                  <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                 </motion.div>
               </motion.div>
             </motion.div>
@@ -193,7 +174,7 @@ export default function Dashboard() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[600px] h-[600px] relative">
+              <div className="w-[400px] h-[400px] relative">
                 {/* Premium backdrop */}
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-full blur-3xl"></div>
                 
@@ -256,35 +237,25 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* Studios Grid Section - Premium Design */}
-      <section className="py-32 bg-gradient-to-br from-white via-orange-50/20 to-gray-50 relative overflow-hidden">
+      {/* Studios Grid Section - Compact Design */}
+      <section className="py-16 bg-gradient-to-br from-white via-orange-50/20 to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            className="text-center mb-20"
+            className="text-center mb-12"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <motion.div
-              className="inline-block mb-6"
-              initial={{ scale: 0.8, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <span className="bg-gradient-to-r from-orange-100 to-orange-50 text-orange-800 px-6 py-3 rounded-full text-sm font-bold border border-orange-200 shadow-lg">
-                🚀 Four Powerful AI Studios
-              </span>
-            </motion.div>
-            <h2 className="text-5xl lg:text-6xl font-black text-gray-900 mb-8 leading-tight">
+
+            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
               Choose Your{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Creative Studio
               </span>
             </h2>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Four specialized AI environments designed for different creative workflows and professional use cases
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+              Four specialized AI environments designed for different creative workflows
             </p>
           </motion.div>
 
