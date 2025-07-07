@@ -149,6 +149,13 @@ Preferred communication style: Simple, everyday language.
   - Added fallback to in-memory storage for development environments
   - Environment variables configured for secure database connection
 
+- **Enhanced Visual Hierarchy** (July 07, 2025):
+  - Increased hero title font sizes (5xl-7xl) for stronger visual impact
+  - Enhanced subtitle text size (xl) and maximum width for better readability
+  - Enlarged "Start Creating" button with larger padding and text (xl) for clear call-to-action
+  - Increased studios section heading size (4xl-5xl) for better section hierarchy
+  - Maintained consistent typography scaling across all breakpoints
+
 ## Changelog
 
 Changelog:

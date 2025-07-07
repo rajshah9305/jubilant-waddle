@@ -80,7 +80,7 @@ export default function Dashboard() {
 
               <div className="space-y-6">
                 <motion.h1 
-                  className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 leading-tight tracking-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -104,7 +104,7 @@ export default function Dashboard() {
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-lg text-gray-600 max-w-xl leading-relaxed font-light"
+                  className="text-xl text-gray-600 max-w-2xl leading-relaxed font-light"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -121,7 +121,7 @@ export default function Dashboard() {
               >
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 text-lg font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border-0 rounded-xl relative overflow-hidden group"
+                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-xl font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border-0 rounded-xl relative overflow-hidden group"
                   onClick={() => handleStudioClick('text')}
                 >
                   <span className="flex items-center space-x-2 relative z-10">
@@ -130,7 +130,7 @@ export default function Dashboard() {
                       initial={{ x: 0 }}
                       whileHover={{ x: 5 }}
                       transition={{ type: "spring", stiffness: 400 }}
-                      className="text-xl"
+                      className="text-2xl"
                     >
                       →
                     </motion.div>
@@ -248,13 +248,13 @@ export default function Dashboard() {
             viewport={{ once: true }}
           >
 
-            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
               Choose Your{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Creative Studio
               </span>
             </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
               Four specialized AI environments designed for different creative workflows
             </p>
           </motion.div>
