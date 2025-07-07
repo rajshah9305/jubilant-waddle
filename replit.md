@@ -105,10 +105,11 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
-- **Enhanced 3D Visual Experience** (July 07, 2025): 
-  - Enlarged the Three.js 3D model with additional components: outer rotating ring, inner pulsing sphere, and floating particles
-  - Added complementary visual elements around the 3D model with animated floating gradients
-  - Improved visual hierarchy with larger canvas (500x500px) and enhanced lighting effects
+- **Simplified 3D Visual Design** (July 07, 2025):
+  - Simplified Three.js 3D model to show only wireframe globe for cleaner, futuristic look
+  - Removed orbital rings, inner sphere, and particles for better visual focus
+  - Increased wireframe globe size (4.5 radius) to establish clear visual hierarchy
+  - Added complementary floating gradient elements around the 3D model
 
 - **Improved Studio Cards Layout** (July 07, 2025):
   - Redesigned studio cards for consistent vertical layout across all breakpoints
@@ -120,6 +121,11 @@ Preferred communication style: Simple, everyday language.
   - Created FileUploadButton component with attachment indicator and preview
   - Integrated file context into chat messages with automatic file analysis prompts
   - Different file type support based on studio type (document studio supports more formats)
+
+- **Document AI Studio Interface Refinement** (July 07, 2025):
+  - Removed file upload section from Document AI Studio page for cleaner UI
+  - Focused interface purely on chat and interaction area
+  - Kept file upload option only next to the send button for streamlined experience
 
 ## Changelog
 
