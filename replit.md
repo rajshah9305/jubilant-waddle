@@ -103,7 +103,25 @@ Cerebras Studio is a full-stack AI creative platform that provides four speciali
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+- **Enhanced 3D Visual Experience** (July 07, 2025): 
+  - Enlarged the Three.js 3D model with additional components: outer rotating ring, inner pulsing sphere, and floating particles
+  - Added complementary visual elements around the 3D model with animated floating gradients
+  - Improved visual hierarchy with larger canvas (500x500px) and enhanced lighting effects
+
+- **Improved Studio Cards Layout** (July 07, 2025):
+  - Redesigned studio cards for consistent vertical layout across all breakpoints
+  - Centered content alignment with larger gradient icons and improved hover effects
+  - Updated grid layout for better visual balance (xl:grid-cols-4 for larger screens)
+
+- **Interactive File Upload Integration** (July 07, 2025):
+  - Added file upload button next to the send button in chat interface
+  - Created FileUploadButton component with attachment indicator and preview
+  - Integrated file context into chat messages with automatic file analysis prompts
+  - Different file type support based on studio type (document studio supports more formats)
+
 ## Changelog
 
 Changelog:
-- July 07, 2025. Initial setup
+- July 07, 2025. Initial setup and major UI enhancements

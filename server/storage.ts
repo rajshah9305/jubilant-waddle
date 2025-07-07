@@ -61,6 +61,7 @@ export class MemStorage implements IStorage {
     const user: User = { 
       ...insertUser, 
       id,
+      apiKey: insertUser.apiKey || null,
       createdAt: new Date()
     };
     this.users.set(id, user);
@@ -91,6 +92,9 @@ export class MemStorage implements IStorage {
     const project: Project = {
       ...insertProject,
       id,
+      userId: insertProject.userId || null,
+      tokensUsed: insertProject.tokensUsed || 0,
+      metadata: insertProject.metadata || null,
       createdAt: new Date(),
       updatedAt: new Date()
     };
@@ -126,6 +130,7 @@ export class MemStorage implements IStorage {
     const message: ChatMessage = {
       ...insertMessage,
       id,
+      projectId: insertMessage.projectId || null,
       timestamp: new Date()
     };
     this.chatMessages.set(id, message);

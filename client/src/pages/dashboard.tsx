@@ -17,23 +17,20 @@ const studioConfigs = [
     description: 'Create compelling content, articles, and marketing copy with advanced AI text generation.',
     icon: PenTool,
     tags: ['Articles', 'Marketing', 'Blog Posts'],
-    className: 'lg:col-span-2',
   },
   {
     id: 'code' as StudioType,
     title: 'Code Generation',
     description: 'Generate, debug, and optimize code across multiple programming languages.',
     icon: Code,
-    tags: ['Python', 'JavaScript'],
-    className: 'lg:col-span-1',
+    tags: ['Python', 'JavaScript', 'React'],
   },
   {
     id: 'document' as StudioType,
     title: 'Document AI',
     description: 'Analyze, summarize, and extract insights from documents and PDFs.',
     icon: FileText,
-    tags: ['Analysis', 'Summary'],
-    className: 'lg:col-span-1',
+    tags: ['Analysis', 'Summary', 'Extract'],
   },
   {
     id: 'creative' as StudioType,
@@ -41,7 +38,6 @@ const studioConfigs = [
     description: 'Craft stories, poetry, screenplays, and creative content with AI-powered inspiration.',
     icon: Feather,
     tags: ['Stories', 'Poetry', 'Scripts'],
-    className: 'lg:col-span-2',
   },
 ];
 
@@ -122,15 +118,20 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - 3D Visual */}
+            {/* Right Side - Enhanced 3D Visual */}
             <motion.div 
-              className="hidden lg:flex justify-center items-center"
+              className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-96 h-96 relative">
+              <div className="w-[500px] h-[500px] relative">
                 <HeroCanvas />
+                {/* Floating elements around the 3D model */}
+                <div className="absolute top-10 left-10 w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute bottom-20 right-10 w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-full opacity-30 animate-bounce"></div>
+                <div className="absolute top-1/2 left-0 w-8 h-8 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-25 animate-ping"></div>
+                <div className="absolute bottom-10 left-1/4 w-6 h-6 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-20 animate-pulse"></div>
               </div>
             </motion.div>
           </div>
@@ -155,12 +156,11 @@ export default function Dashboard() {
             </p>
           </motion.div>
 
-          {/* Asymmetrical Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Consistent Grid Layout */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
             {studioConfigs.map((studio, index) => (
               <motion.div
                 key={studio.id}
-                className={studio.className}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
