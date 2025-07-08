@@ -29,27 +29,32 @@ export class ThreeScene {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron (properly sized to fit in container)
+    // Create main wireframe icosahedron with darker, more professional styling
     const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0xff8c00,
+      color: 0x1a1a1a,
       wireframe: true,
       transparent: true,
-      opacity: 0.9
+      opacity: 0.95
     });
     
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
 
-    // Enhanced lighting
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+    // Professional minimal lighting setup
+    const ambientLight = new THREE.AmbientLight(0x333333, 0.3);
     this.scene.add(ambientLight);
 
-    const pointLight1 = new THREE.PointLight(0xff8c00, 1.2);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    directionalLight.position.set(10, 10, 10);
+    this.scene.add(directionalLight);
+
+    // Subtle accent lighting for depth
+    const pointLight1 = new THREE.PointLight(0x666666, 0.4);
     pointLight1.position.set(8, 8, 8);
     this.scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0xff4500, 0.8);
+    const pointLight2 = new THREE.PointLight(0x444444, 0.3);
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 

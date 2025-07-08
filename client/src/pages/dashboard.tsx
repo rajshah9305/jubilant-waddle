@@ -63,7 +63,7 @@ export default function Dashboard() {
   return (
     <div className="pt-16">
       {/* Hero Section - Compact Design */}
-      <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
+      <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content - Enhanced Premium Design */}
@@ -81,36 +81,31 @@ export default function Dashboard() {
 
               <div className="space-y-8">
                 <motion.h1 
-                  className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 leading-tight tracking-tight"
+                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight font-sans"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  AI Creative
-                  <motion.span 
-                    className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 bg-clip-text text-transparent block relative"
-                    initial={{ backgroundPosition: "0% 50%" }}
-                    animate={{ backgroundPosition: "100% 50%" }}
-                    transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
-                    style={{ backgroundSize: "200% 200%" }}
-                  >
+                  <span className="block">AI</span>
+                  <span className="block">Creative</span>
+                  <span className="block bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
                     Studio
-                    <motion.div
-                      className="absolute -bottom-3 left-0 h-1.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: "100%" }}
-                      transition={{ duration: 1.2, delay: 1 }}
-                    />
-                  </motion.span>
+                  </span>
+                  <motion.div
+                    className="h-1.5 bg-gradient-to-r from-orange-600 to-red-600 w-2/3 mt-4"
+                    initial={{ width: 0 }}
+                    animate={{ width: "66.666667%" }}
+                    transition={{ duration: 1.2, delay: 1 }}
+                  />
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-2xl md:text-3xl text-gray-600 max-w-2xl leading-relaxed font-light"
+                  className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed font-medium"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Unleash your creativity with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
+                  Transform your workflow with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
                 </motion.p>
               </div>
               
@@ -122,7 +117,7 @@ export default function Dashboard() {
               >
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 hover:from-orange-600 hover:via-red-500 hover:to-orange-700 text-white px-12 py-6 text-2xl font-black shadow-2xl hover:shadow-orange-500/35 transition-all duration-400 transform hover:scale-110 border-0 rounded-2xl relative overflow-hidden group"
+                  className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-10 py-5 text-xl font-bold shadow-xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 border-0 rounded-xl relative overflow-hidden group"
                   onClick={() => handleStudioClick('text')}
                 >
                   <span className="flex items-center space-x-3 relative z-10">
@@ -177,63 +172,63 @@ export default function Dashboard() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
-                {/* Premium backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-2xl blur-3xl"></div>
+                {/* Professional backdrop */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100/20 via-transparent to-gray-200/20 rounded-2xl blur-3xl"></div>
                 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
                 
-                {/* Enhanced floating elements with proper scaling for 500px container */}
+                {/* Subtle professional floating elements */}
                 <motion.div 
-                  className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-25"
+                  className="absolute top-16 left-16 w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-15"
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    opacity: [0.15, 0.25, 0.15]
+                  }}
+                  transition={{ duration: 6, repeat: Infinity }}
+                />
+                <motion.div 
+                  className="absolute bottom-24 right-16 w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-20"
+                  animate={{ 
+                    y: [0, -10, 0],
+                    scale: [1, 1.05, 1]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity }}
+                />
+                <motion.div 
+                  className="absolute top-1/2 left-4 w-8 h-8 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-10"
                   animate={{ 
                     scale: [1, 1.2, 1],
-                    opacity: [0.25, 0.4, 0.25]
+                    opacity: [0.1, 0.2, 0.1]
                   }}
                   transition={{ duration: 4, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute bottom-24 right-16 w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full opacity-30"
+                  className="absolute bottom-16 left-1/3 w-6 h-6 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-15"
                   animate={{ 
-                    y: [0, -20, 0],
-                    scale: [1, 1.1, 1]
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 90, 180]
                   }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                />
-                <motion.div 
-                  className="absolute top-1/2 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20"
-                  animate={{ 
-                    scale: [1, 1.5, 1],
-                    opacity: [0.2, 0.5, 0.2]
-                  }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                />
-                <motion.div 
-                  className="absolute bottom-16 left-1/3 w-10 h-10 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-25"
-                  animate={{ 
-                    scale: [1, 1.3, 1],
-                    rotate: [0, 180, 360]
-                  }}
-                  transition={{ duration: 5, repeat: Infinity }}
+                  transition={{ duration: 8, repeat: Infinity }}
                 />
                 
-                {/* Additional premium visual elements */}
+                {/* Additional minimal visual elements */}
                 <motion.div 
-                  className="absolute top-1/3 right-8 w-6 h-6 bg-gradient-to-br from-red-400 to-orange-600 rounded-full opacity-30"
+                  className="absolute top-1/3 right-8 w-4 h-4 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-12"
                   animate={{ 
-                    x: [0, 10, 0],
-                    opacity: [0.3, 0.6, 0.3]
+                    x: [0, 5, 0],
+                    opacity: [0.12, 0.2, 0.12]
                   }}
-                  transition={{ duration: 3.5, repeat: Infinity }}
+                  transition={{ duration: 7, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-3/4 left-20 w-4 h-4 bg-gradient-to-br from-orange-300 to-yellow-500 rounded-full opacity-35"
+                  className="absolute top-3/4 left-20 w-3 h-3 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-18"
                   animate={{ 
-                    y: [0, -15, 0],
-                    scale: [1, 1.4, 1]
+                    y: [0, -8, 0],
+                    scale: [1, 1.2, 1]
                   }}
-                  transition={{ duration: 2.5, repeat: Infinity }}
+                  transition={{ duration: 6, repeat: Infinity }}
                 />
               </div>
             </motion.div>
