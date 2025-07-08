@@ -156,6 +156,13 @@ Preferred communication style: Simple, everyday language.
   - Increased studios section heading size (4xl-5xl) for better section hierarchy
   - Maintained consistent typography scaling across all breakpoints
 
+- **Mobile Optimization and Layout Fixes** (July 07, 2025):
+  - Fixed Three.js 3D model visibility on mobile devices (hidden on screens smaller than lg)
+  - Improved mobile layout with centered content alignment and responsive spacing
+  - Enhanced Three.js renderer performance with pixel ratio optimization and power preference
+  - Optimized hero section layout for better mobile and tablet viewing experience
+  - Standardized studio card tag ordering across all four studios for consistency
+
 ## Changelog
 
 Changelog:

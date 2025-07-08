@@ -22,9 +22,11 @@ export class ThreeScene {
     // Renderer setup
     this.renderer = new THREE.WebGLRenderer({ 
       alpha: true, 
-      antialias: true 
+      antialias: true,
+      powerPreference: 'high-performance'
     });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setClearColor(0x000000, 0);
     container.appendChild(this.renderer.domElement);
 

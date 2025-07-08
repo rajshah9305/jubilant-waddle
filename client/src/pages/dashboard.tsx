@@ -64,10 +64,10 @@ export default function Dashboard() {
       {/* Hero Section - Compact Design */}
       <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:items-center w-full">
             {/* Left Content - Enhanced Premium Design */}
             <motion.div 
-              className="space-y-10 relative z-10"
+              className="space-y-8 lg:space-y-10 relative z-10 text-center lg:text-left"
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
@@ -114,7 +114,7 @@ export default function Dashboard() {
               </div>
               
               <motion.div 
-                className="flex justify-start"
+                className="flex justify-center lg:justify-start"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
@@ -141,7 +141,7 @@ export default function Dashboard() {
 
               {/* Compact Real-time Metrics */}
               <motion.div 
-                className="grid grid-cols-2 gap-4 pt-6"
+                className="grid grid-cols-2 gap-4 pt-6 max-w-md mx-auto lg:mx-0"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1 }}
