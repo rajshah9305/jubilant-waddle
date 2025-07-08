@@ -59,20 +59,37 @@ export default function Header() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-200/50 shadow-lg shadow-gray-900/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            {/* Enhanced Enterprise Logo */}
-            <Link href="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300 group">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 via-orange-600 to-red-500 rounded-2xl flex items-center justify-center shadow-xl group-hover:shadow-orange-500/30 transition-all duration-400 group-hover:rotate-3">
-                <Sparkles className="w-6 h-6 text-white" />
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-2xl border-b border-white/20 shadow-2xl shadow-gray-900/10">
+        <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="flex justify-between items-center h-24">
+            {/* Premium Award-Winning Logo */}
+            <Link href="/" className="flex items-center space-x-5 hover:scale-105 transition-all duration-500 group">
+              <div className="relative w-14 h-14 bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 rounded-2xl flex items-center justify-center shadow-2xl group-hover:shadow-orange-500/40 transition-all duration-500 group-hover:rotate-6">
+                <Sparkles className="w-7 h-7 text-white relative z-10" />
+                
+                {/* Logo Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-400 to-red-400 rounded-2xl blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-500"></div>
+                
+                {/* Floating Elements */}
+                <motion.div
+                  className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full opacity-80"
+                  animate={{
+                    scale: [1, 1.3, 1],
+                    opacity: [0.8, 1, 0.8]
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity
+                  }}
+                />
               </div>
-              <div>
-                <span className="text-2xl font-black bg-gradient-to-r from-gray-900 via-orange-700 to-gray-900 bg-clip-text text-transparent leading-tight">
+              
+              <div className="space-y-0.5">
+                <span className="text-2xl font-black bg-gradient-to-r from-gray-900 via-orange-600 to-gray-900 bg-clip-text text-transparent leading-tight tracking-tight">
                   Cerebras Studio
                 </span>
-                <div className="text-xs text-gray-500 font-bold tracking-wider uppercase opacity-80">
-                  Enterprise AI Platform
+                <div className="text-xs text-gray-500 font-bold tracking-widest uppercase opacity-70 group-hover:opacity-90 transition-opacity duration-300">
+                  AI Creative Platform
                 </div>
               </div>
             </Link>

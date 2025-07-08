@@ -62,51 +62,92 @@ export default function Dashboard() {
 
   return (
     <div className="pt-16">
-      {/* Hero Section - Compact Design */}
-      <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
-            {/* Left Content - Enhanced Premium Design */}
+      {/* Hero Section - Premium Awwwards-Style Design */}
+      <section className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/20 relative overflow-hidden">
+        {/* Sophisticated Background Elements */}
+        <div className="absolute inset-0 opacity-40">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-br from-orange-300/30 to-red-300/30 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-gradient-to-br from-blue-300/20 to-purple-300/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+          <div className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-pink-300/20 to-orange-300/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+        </div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+        
+        <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 h-full flex items-center py-16 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center w-full">
+            {/* Left Content - Award-Winning Typography */}
             <motion.div 
-              className="space-y-10 relative z-10"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              className="lg:col-span-7 space-y-12 relative"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
             >
-              {/* Floating background elements */}
-              <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-400/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
-              <div className="absolute top-1/2 -left-10 w-20 h-20 bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-2xl animate-bounce"></div>
+              {/* Premium Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="inline-flex items-center space-x-3 bg-white/80 backdrop-blur-xl border border-orange-200/50 rounded-full px-6 py-3 shadow-xl"
+              >
+                <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full animate-pulse"></div>
+                <span className="text-sm font-bold text-gray-700 tracking-wide">ENTERPRISE AI PLATFORM</span>
+              </motion.div>
               
 
 
-              <div className="space-y-8">
+              {/* Award-Winning Headline */}
+              <div className="space-y-12">
                 <motion.h1 
-                  className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 leading-[0.95] tracking-tight font-sans"
-                  initial={{ opacity: 0, y: 30 }}
+                  className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black leading-[0.85] tracking-tighter"
+                  initial={{ opacity: 0, y: 40 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
+                  transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
                 >
-                  <span className="block">AI</span>
-                  <span className="block">Creative</span>
-                  <span className="block bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-                    Studio
+                  <span className="block text-gray-900 mb-2">Create</span>
+                  <span className="block text-gray-900 mb-2">Beyond</span>
+                  <span className="block bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent relative">
+                    Limits
+                    <motion.div
+                      className="absolute -bottom-4 left-0 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
+                      initial={{ width: 0 }}
+                      animate={{ width: "100%" }}
+                      transition={{ duration: 1.5, delay: 1.2, ease: "easeOut" }}
+                    />
                   </span>
-                  <motion.div
-                    className="h-1.5 bg-gradient-to-r from-orange-600 to-red-600 w-2/3 mt-4"
-                    initial={{ width: 0 }}
-                    animate={{ width: "66.666667%" }}
-                    transition={{ duration: 1.2, delay: 1 }}
-                  />
                 </motion.h1>
                 
-                <motion.p 
-                  className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed font-medium"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
+                <motion.div
+                  className="space-y-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.8 }}
                 >
-                  Transform your workflow with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
-                </motion.p>
+                  <p className="text-xl md:text-2xl text-gray-700 max-w-2xl leading-relaxed font-light">
+                    Four specialized AI environments engineered for{' '}
+                    <span className="font-semibold text-gray-900">exceptional creative output</span>
+                  </p>
+                  
+                  {/* Premium Stats */}
+                  <div className="flex flex-wrap gap-8 pt-4">
+                    {[
+                      { label: 'Processing Speed', value: '10x faster' },
+                      { label: 'Accuracy Rate', value: '99.7%' },
+                      { label: 'Studios Available', value: '4' }
+                    ].map((stat, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1 + index * 0.1 }}
+                        className="text-center"
+                      >
+                        <div className="text-2xl font-black text-orange-600">{stat.value}</div>
+                        <div className="text-sm text-gray-600 font-medium">{stat.label}</div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
               </div>
               
               <motion.div 
@@ -164,34 +205,89 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Premium 3D Visual Experience - Properly Sized to Prevent Clipping */}
-            <motion.div 
-              className="hidden lg:flex justify-center items-center relative"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
-                {/* Professional backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100/20 via-transparent to-gray-200/20 rounded-2xl blur-3xl"></div>
+            {/* Premium Call-to-Action */}
+              <motion.div
+                className="flex flex-col sm:flex-row gap-6 pt-8"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              >
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold px-10 py-6 rounded-2xl shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1 text-lg"
+                  onClick={() => handleStudioClick('text')}
+                >
+                  Start Creating
+                  <motion.div
+                    className="ml-2"
+                    animate={{ x: [0, 4, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                  >
+                    →
+                  </motion.div>
+                </Button>
                 
-                <div className="absolute inset-0 flex items-center justify-center">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-gray-300 hover:border-orange-300 text-gray-700 hover:text-orange-600 font-bold px-10 py-6 rounded-2xl hover:bg-orange-50 transition-all duration-300 text-lg backdrop-blur-sm bg-white/80"
+                >
+                  Watch Demo
+                </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Right Side - Premium 3D Visual Experience */}
+            <motion.div 
+              className="lg:col-span-5 flex justify-center items-center relative"
+              initial={{ opacity: 0, scale: 0.8, rotateY: 15 }}
+              animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+              transition={{ duration: 1.2, delay: 0.6, ease: "easeOut" }}
+            >
+              <div className="w-full max-w-[600px] h-[600px] relative">
+                {/* Sophisticated Glass Morphism Container */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-white/10 to-transparent backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl overflow-hidden">
+                  {/* Premium Glass Effects */}
+                  <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/20 to-transparent"></div>
+                  <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-500/10 to-transparent"></div>
+                </div>
+                
+                <div className="absolute inset-4 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
                 
-                {/* Subtle professional floating elements */}
+                {/* Floating UI Elements */}
                 <motion.div 
-                  className="absolute top-16 left-16 w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-15"
+                  className="absolute top-8 left-8 bg-white/90 backdrop-blur-xl rounded-2xl p-4 shadow-xl border border-white/30"
                   animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.15, 0.25, 0.15]
+                    y: [0, -8, 0],
+                    rotate: [0, 1, 0]
                   }}
-                  transition={{ duration: 6, repeat: Infinity }}
-                />
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <div className="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg"></div>
+                </motion.div>
+                
                 <motion.div 
-                  className="absolute bottom-24 right-16 w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-20"
+                  className="absolute bottom-8 right-8 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/30"
                   animate={{ 
-                    y: [0, -10, 0],
+                    y: [0, 8, 0],
+                    rotate: [0, -1, 0]
+                  }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                >
+                  <div className="text-sm font-bold text-gray-700">AI Processing</div>
+                  <div className="text-xs text-gray-500">99.7% Accuracy</div>
+                </motion.div>
+                
+                <motion.div 
+                  className="absolute top-1/2 left-4 bg-gradient-to-br from-blue-500/90 to-purple-500/90 backdrop-blur-xl rounded-full w-12 h-12 shadow-xl"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                />],
                     scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 5, repeat: Infinity }}
@@ -236,27 +332,54 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* Studios Grid Section - Enhanced Design */}
-      <section className="py-20 bg-gradient-to-br from-white via-orange-50/30 to-gray-50/80 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Studios Grid Section - Awwwards Premium Design */}
+      <section className="py-32 bg-gradient-to-br from-slate-50 via-white to-orange-50/30 relative overflow-hidden">
+        {/* Sophisticated Background Pattern */}
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-1/4 left-1/4 w-80 h-80 bg-gradient-to-br from-orange-400/20 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-br from-blue-400/15 to-transparent rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="max-w-8xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <motion.div
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 30 }}
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            {/* Premium Section Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-100 to-red-100 rounded-full px-6 py-3 mb-8"
+            >
+              <div className="w-2 h-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"></div>
+              <span className="text-sm font-bold text-gray-700 tracking-wider uppercase">AI Studios</span>
+            </motion.div>
 
-            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
+            <h2 className="text-6xl lg:text-7xl xl:text-8xl font-black text-gray-900 mb-8 leading-[0.9] tracking-tighter">
               Choose Your{' '}
-              <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
-                Creative Studio
+              <span className="block lg:inline bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 bg-clip-text text-transparent">
+                Creative Space
               </span>
             </h2>
-            <p className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
-              Four specialized AI environments designed for different creative workflows
+            <p className="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light mb-12">
+              Four specialized AI environments engineered for{' '}
+              <span className="font-semibold text-gray-800">exceptional creative output</span>
             </p>
-          </motion.div>
+            
+            {/* Premium Visual Separator */}
+            <motion.div
+              className="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto rounded-full"
+              initial={{ width: 0 }}
+              whileInView={{ width: 96 }}
+              transition={{ duration: 1, delay: 0.4 }}
+              viewport={{ once: true }}
+            />
+          </motion.div>v>
 
           {/* Enhanced Grid Layout with Better Spacing */}
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
