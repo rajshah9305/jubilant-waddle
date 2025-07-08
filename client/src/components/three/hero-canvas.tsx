@@ -3,11 +3,9 @@ import { ThreeScene } from '@/lib/three-scene';
 
 interface HeroCanvasProps {
   className?: string;
-  titleSize?: number;
-  subtitleSize?: number;
 }
 
-export function HeroCanvas({ className, titleSize, subtitleSize }: HeroCanvasProps) {
+export function HeroCanvas({ className }: HeroCanvasProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<ThreeScene | null>(null);
 
@@ -15,10 +13,7 @@ export function HeroCanvas({ className, titleSize, subtitleSize }: HeroCanvasPro
     if (!containerRef.current) return;
 
     try {
-      sceneRef.current = new ThreeScene(containerRef.current, {
-        titleSize,
-        subtitleSize
-      });
+      sceneRef.current = new ThreeScene(containerRef.current);
     } catch (error) {
       console.error('Failed to initialize Three.js scene:', error);
     }
@@ -30,13 +25,6 @@ export function HeroCanvas({ className, titleSize, subtitleSize }: HeroCanvasPro
       }
     };
   }, []);
-
-  // Update scale when typography sizes change
-  useEffect(() => {
-    if (sceneRef.current && titleSize && subtitleSize) {
-      sceneRef.current.updateScale(titleSize, subtitleSize);
-    }
-  }, [titleSize, subtitleSize]);
 
   return (
     <div 
