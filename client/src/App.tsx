@@ -4,6 +4,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ApiKeyProvider } from "@/hooks/use-api-key";
+import { ThemeProvider } from "@/hooks/use-theme";
 import Dashboard from "@/pages/dashboard";
 import Studio from "@/pages/studio";
 import Projects from "@/pages/projects";
@@ -13,7 +14,7 @@ import Header from "@/components/layout/header";
 
 function Router() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background transition-colors duration-300">
       <Header />
       <Switch>
         <Route path="/" component={Dashboard} />
@@ -29,12 +30,14 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <ApiKeyProvider>
-          <Toaster />
-          <Router />
-        </ApiKeyProvider>
-      </TooltipProvider>
+      <ThemeProvider>
+        <TooltipProvider>
+          <ApiKeyProvider>
+            <Toaster />
+            <Router />
+          </ApiKeyProvider>
+        </TooltipProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }

@@ -7,6 +7,7 @@ import { HeroCanvas } from '@/components/three/hero-canvas';
 import { StudioCard } from '@/components/cards/studio-card';
 import { MissingApiKeyModal } from '@/components/modals/missing-api-key-modal';
 import { ApiKeyModal } from '@/components/modals/api-key-modal';
+import { QuickActions } from '@/components/ui/quick-actions';
 import { useApiKey } from '@/hooks/use-api-key';
 import { StudioType } from '@/types/studio';
 
@@ -651,6 +652,9 @@ export default function Dashboard() {
         open={showApiKeyModal}
         onOpenChange={setShowApiKeyModal}
       />
+      
+      {/* Quick Actions FAB */}
+      <QuickActions />
     </div>
   );
 }

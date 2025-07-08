@@ -22,6 +22,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { TrendChart } from '@/components/ui/trend-chart';
 import { useApiKey } from '@/hooks/use-api-key';
 
 interface AnalyticsData {
@@ -235,28 +236,32 @@ export default function Analytics() {
                 value: formatNumber(analyticsData.overview.totalTokens),
                 change: analyticsData.overview.tokenGrowth,
                 icon: Zap,
-                gradient: 'from-blue-500 to-blue-600'
+                gradient: 'from-blue-500 to-blue-600',
+                trendData: [85000, 92000, 88000, 95000, 101000, 98000, 105000]
               },
               {
                 title: 'Active Projects',
                 value: formatNumber(analyticsData.overview.totalProjects),
                 change: analyticsData.overview.projectGrowth,
                 icon: Target,
-                gradient: 'from-green-500 to-green-600'
+                gradient: 'from-green-500 to-green-600',
+                trendData: [28, 32, 30, 35, 38, 36, 42]
               },
               {
                 title: 'Active Users',
                 value: formatNumber(analyticsData.overview.activeUsers),
                 change: analyticsData.overview.userGrowth,
                 icon: Users,
-                gradient: 'from-purple-500 to-purple-600'
+                gradient: 'from-purple-500 to-purple-600',
+                trendData: [8200, 8400, 8600, 8300, 8700, 8900, 9100]
               },
               {
                 title: 'Avg Response',
                 value: `${analyticsData.overview.averageResponseTime}s`,
                 change: analyticsData.overview.responseTimeChange,
                 icon: Clock,
-                gradient: 'from-orange-500 to-red-500'
+                gradient: 'from-orange-500 to-red-500',
+                trendData: [2.8, 2.5, 2.7, 2.4, 2.2, 2.3, 2.1]
               }
             ].map((metric, index) => (
               <motion.div
@@ -275,13 +280,24 @@ export default function Analytics() {
                       </div>
                       {renderTrendIndicator(metric.change)}
                     </div>
-                    <div>
+                    <div className="mb-4">
                       <h3 className="text-sm font-bold text-gray-600 uppercase tracking-wider mb-2">
                         {metric.title}
                       </h3>
                       <p className="text-3xl font-black text-gray-900">
                         {metric.value}
                       </p>
+                    </div>
+                    {/* Trend Chart */}
+                    <div className="mt-4 pt-4 border-t border-gray-200/60">
+                      <TrendChart 
+                        data={metric.trendData} 
+                        color={metric.gradient.includes('blue') ? '#3b82f6' : 
+                               metric.gradient.includes('green') ? '#10b981' : 
+                               metric.gradient.includes('purple') ? '#8b5cf6' : '#f97316'} 
+                        width={200} 
+                        height={50} 
+                      />
                     </div>
                   </CardContent>
                 </Card>

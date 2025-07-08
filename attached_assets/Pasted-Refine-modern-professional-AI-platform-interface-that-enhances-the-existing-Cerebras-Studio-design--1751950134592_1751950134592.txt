@@ -1,0 +1,63 @@
+Refine modern, professional AI platform interface that enhances the existing Cerebras Studio design with the following improvements:
+Core Design Requirements:
+* Maintain the orange/coral brand color (#E67B47) as the primary accent
+* Clean, contemporary design with improved visual hierarchy
+* Enhanced accessibility and mobile responsiveness
+* Subtle animations and micro-interactions for premium feel
+Landing Page Refinements:
+* Hero Section: Strengthen the "AI Creative Studio" headline with better typography hierarchy
+* 3D Brain Graphic: Make the wireframe brain more dynamic with subtle floating animation
+* Statistics Cards: Add icon consistency and improve data visualization
+* CTA Button: Enhanced hover states and more compelling copy than "Start Creating"
+Dashboard Interface Improvements:
+* Left Sidebar:
+    * Add collapsible functionality for better screen real estate
+    * Improve the studio selection with better visual indicators for Popular/Enhanced/Pro tiers
+    * Add progress indicators for current usage limits
+* Chat Interface:
+    * Modern message bubbles with syntax highlighting for code
+    * Better file upload/attachment handling
+    * Real-time typing indicators and response time display
+* Metrics Cards:
+    * Add trend charts (sparklines) to show performance over time
+    * Better iconography that's more intuitive
+    * Color-coded performance indicators (green for good, amber for attention needed)
+Analytics Dashboard Enhancements:
+* Navigation: Sticky navigation with breadcrumbs
+* Time Controls: Add custom date range picker alongside preset options
+* Metric Cards:
+    * Add percentage change indicators with up/down arrows
+    * Include small trend lines within each card
+    * Better contrast for accessibility
+* Studio Performance:
+    * Convert the list to interactive cards with hover states
+    * Add quick action buttons (view details, generate report)
+    * Include visual usage bars showing capacity vs. current usage
+System Health Improvements:
+* Status Indicators: Use color-coded dots (green/amber/red) for system status
+* Performance Metrics: Add real-time updating numbers
+* Error Rate Display: Include timeline graph showing error trends
+New Features to Add:
+1. Dark Mode Toggle - Provide light/dark theme options
+2. Notification System - Toast notifications for system updates
+3. Quick Actions Bar - Floating action button for common tasks
+4. Usage Insights - Personalized recommendations based on usage patterns
+5. Export Functionality - Better data export options with custom formatting
+Technical Specifications:
+* Framework: React with TypeScript
+* Styling: Tailwind CSS with custom design tokens
+* Charts: Recharts for data visualization
+* Icons: Lucide React for consistent iconography
+* Animations: Framer Motion for smooth transitions
+Accessibility Improvements:
+* WCAG 2.1 AA compliance
+* Keyboard navigation for all interactive elements
+* Screen reader optimization
+* High contrast mode support
+* Focus indicators that are clearly visible
+Performance Optimizations:
+* Lazy loading for analytics charts
+* Skeleton loading states
+* Efficient data fetching with pagination
+* Image optimization for the 3D graphics
+Goal: Transform the existing functional interface into a premium, enterprise-grade AI platform that feels modern, intuitive, and trustworthy while maintaining the core functionality and brand identity.
