@@ -7,6 +7,7 @@ import { ApiKeyProvider } from "@/hooks/use-api-key";
 import Dashboard from "@/pages/dashboard";
 import Studio from "@/pages/studio";
 import Projects from "@/pages/projects";
+import Analytics from "@/pages/analytics";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/layout/header";
 
@@ -18,6 +19,7 @@ function Router() {
         <Route path="/" component={Dashboard} />
         <Route path="/studio/:studioType?" component={Studio} />
         <Route path="/projects" component={Projects} />
+        <Route path="/analytics" component={Analytics} />
         <Route component={NotFound} />
       </Switch>
     </div>
