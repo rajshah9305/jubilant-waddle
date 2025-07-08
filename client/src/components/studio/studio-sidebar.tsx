@@ -48,11 +48,6 @@ export function StudioSidebar({ currentStudio, onStudioChange }: StudioSidebarPr
             </p>
           </div>
         </div>
-            <p className="text-sm text-gray-600 font-medium">
-              {enhancedStudioConfig[currentStudio].description}
-            </p>
-          </div>
-        </div>
       </div>
 
       {/* Enhanced studio navigation */}
