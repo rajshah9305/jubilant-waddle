@@ -28,8 +28,8 @@ export class ThreeScene {
     this.renderer.setClearColor(0x000000, 0);
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron (larger for better visual hierarchy)
-    const geometry = new THREE.IcosahedronGeometry(4.5, 1);
+    // Create main wireframe icosahedron (significantly enlarged for better visual correspondence)
+    const geometry = new THREE.IcosahedronGeometry(6.5, 1);
     const material = new THREE.MeshBasicMaterial({
       color: 0xff8c00,
       wireframe: true,
@@ -52,7 +52,7 @@ export class ThreeScene {
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 
-    this.camera.position.z = 8;
+    this.camera.position.z = 10;
 
     // Start animation
     this.animate();

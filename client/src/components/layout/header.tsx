@@ -16,6 +16,32 @@ export default function Header() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [notificationCount, setNotificationCount] = useState(3);
   const [showNotifications, setShowNotifications] = useState(false);
+  const [notifications, setNotifications] = useState([
+    {
+      id: 1,
+      type: 'system',
+      title: 'System Update',
+      message: 'New AI models are now available',
+      timestamp: new Date(Date.now() - 5 * 60 * 1000), // 5 minutes ago
+      read: false
+    },
+    {
+      id: 2,
+      type: 'usage',
+      title: 'Usage Alert',
+      message: "You've used 80% of your monthly tokens",
+      timestamp: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+      read: false
+    },
+    {
+      id: 3,
+      type: 'performance',
+      title: 'Performance',
+      message: 'Your projects are running smoothly',
+      timestamp: new Date(Date.now() - 6 * 60 * 60 * 1000), // 6 hours ago
+      read: false
+    }
+  ]);
   const { isValid } = useApiKey();
   // const { theme, toggleTheme } = useTheme(); // Temporarily disabled
 
@@ -104,25 +130,50 @@ export default function Header() {
                         <Button
                           variant="ghost"
                           size="sm"
-                          onClick={() => setNotificationCount(0)}
+                          onClick={() => {
+                            setNotificationCount(0);
+                            setNotifications(prev => prev.map(n => ({ ...n, read: true })));
+                          }}
                           className="text-xs text-orange-600 hover:text-orange-700"
                         >
                           Clear All
                         </Button>
                       </div>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-orange-50 rounded-xl border border-orange-200/60">
-                          <p className="text-sm font-medium text-gray-900">System Update</p>
-                          <p className="text-xs text-gray-600">New AI models are now available</p>
-                        </div>
-                        <div className="p-3 bg-blue-50 rounded-xl border border-blue-200/60">
-                          <p className="text-sm font-medium text-gray-900">Usage Alert</p>
-                          <p className="text-xs text-gray-600">You've used 80% of your monthly tokens</p>
-                        </div>
-                        <div className="p-3 bg-green-50 rounded-xl border border-green-200/60">
-                          <p className="text-sm font-medium text-gray-900">Performance</p>
-                          <p className="text-xs text-gray-600">Your projects are running smoothly</p>
-                        </div>
+                      <div className="space-y-3 max-h-64 overflow-y-auto">
+                        {notifications.map((notification) => (
+                          <div
+                            key={notification.id}
+                            className={`p-3 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md ${
+                              notification.type === 'system' ? 'bg-orange-50 border-orange-200/60 hover:bg-orange-100' :
+                              notification.type === 'usage' ? 'bg-blue-50 border-blue-200/60 hover:bg-blue-100' :
+                              'bg-green-50 border-green-200/60 hover:bg-green-100'
+                            } ${!notification.read ? 'shadow-md' : ''}`}
+                            onClick={() => {
+                              setNotifications(prev => prev.map(n => 
+                                n.id === notification.id ? { ...n, read: true } : n
+                              ));
+                              if (!notification.read) {
+                                setNotificationCount(prev => Math.max(0, prev - 1));
+                              }
+                            }}
+                          >
+                            <div className="flex items-start justify-between">
+                              <div className="flex-1">
+                                <p className="text-sm font-medium text-gray-900">{notification.title}</p>
+                                <p className="text-xs text-gray-600 mt-1">{notification.message}</p>
+                                <p className="text-xs text-gray-500 mt-2">
+                                  {notification.timestamp.toLocaleTimeString([], { 
+                                    hour: '2-digit', 
+                                    minute: '2-digit' 
+                                  })}
+                                </p>
+                              </div>
+                              {!notification.read && (
+                                <div className="w-2 h-2 bg-orange-500 rounded-full mt-1 ml-2"></div>
+                              )}
+                            </div>
+                          </div>
+                        ))}
                       </div>
                     </motion.div>
                   )}
@@ -141,22 +192,7 @@ export default function Header() {
                 <Sun className="w-5 h-5" />
               </Button>
 
-              {/* API Key Button */}
-              <Button
-                onClick={() => setShowApiKeyModal(true)}
-                className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 hover:from-orange-600 hover:via-red-500 hover:to-red-600 text-white font-bold px-6 py-3 shadow-xl hover:shadow-orange-500/30 transition-all duration-400 transform hover:scale-105 rounded-xl relative overflow-hidden group"
-              >
-                <div className="flex items-center space-x-3 relative z-10">
-                  <Key className="w-5 h-5" />
-                  <span>API Keys</span>
-                  <div
-                    className={`w-3 h-3 rounded-full animate-pulse ${
-                      isValid ? 'bg-green-300 shadow-lg shadow-green-500/40' : 'bg-red-300 shadow-lg shadow-red-500/40'
-                    }`}
-                  />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-r from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
-              </Button>
+
               
               <UserProfile />
             </div>

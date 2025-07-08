@@ -1,0 +1,18 @@
+
+Analyze the "Cerebras Studio - Enterprise AI Platform." Your task is to identify areas for design and functionality improvement, propose concrete changes, and prioritize these recommendations, all while considering the context of an enterprise AI platform.
+
+**Specific Directives:**
+
+1.  **Remove the "API Keys" Button:** The "API Keys" button and its associated functionality (currently next to the user profile avatar) should be removed entirely from the UI.
+2.  **Enlarge 3D Model and Align with Hero Content:** The three.js 3D model render on the right side of the hero section needs to be significantly enlarged. Its size and position should be adjusted to be in better visual correspondence and balance with the main hero title ("AI Creative Studio") and the accompanying subtitle.
+3.  **Ensure Full Functionality on "Settings" Page:** Confirm that all elements and components present on the "Settings" page (which is accessible via the top navigation) are fully working, properly configured, and responsive.
+4.  **Ensure Full Functionality for Notification Icon:** The bell (notification) icon on the main landing page's top sidebar must work properly. This includes ensuring all associated notifications are linked correctly and flow seamlessly from the moment a user lands on the page through their entire interaction.
+
+**Instructions:**
+
+* **Identify Areas for Improvement:** Pinpoint specific elements on the page (e.g., navigation, call to action, information hierarchy, visual appeal, specific components mentioned in the directives) that could be enhanced based on the screenshot.
+* **Propose Concrete Changes:** For each identified area or directive, suggest specific, implementable design or functionality changes. Be as detailed as possible.
+* **Prioritize Recommendations:** If possible, suggest which changes might have the highest impact based on typical user behavior, a streamlined user experience, and the platform's overarching business goals.
+* **Consider the "Enterprise AI Platform" Context:** Throughout your analysis and recommendations, emphasize how the proposed design changes can better serve an enterprise audience and enhance the core functionalities described ("Generate compelling content, optimize code, analyze documents, and craft engaging stories"). Focus on clarity, efficiency, and professional aesthetics.
+
+Begin your analysis and recommendations.
