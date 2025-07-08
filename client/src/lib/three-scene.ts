@@ -53,16 +53,39 @@ export class ThreeScene {
     const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
     this.scene.add(glowMesh);
 
+    // Add connecting lines for enterprise visual integration
+    const connectionGeometry = new THREE.BufferGeometry();
+    const connectionPositions = new Float32Array([
+      -8, -2, 0,   // left connection point
+      -3, 0, 0,    // to globe
+      8, 2, 0,     // right connection point
+      3, 0, 0,     // to globe
+      0, -6, 0,    // bottom connection
+      0, -2, 0,    // to globe
+    ]);
+    
+    connectionGeometry.setAttribute('position', new THREE.BufferAttribute(connectionPositions, 3));
+    const connectionMaterial = new THREE.LineBasicMaterial({
+      color: 0xff6a00,
+      transparent: true,
+      opacity: 0.1
+    });
+    
+    const connectionLines = new THREE.LineSegments(connectionGeometry, connectionMaterial);
+    this.scene.add(connectionLines);
+
     // Enhanced lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     this.scene.add(ambientLight);
 
     const pointLight1 = new THREE.PointLight(0xff8c00, 1.2);
     pointLight1.position.set(8, 8, 8);
+    pointLight1.name = 'pointLight1';
     this.scene.add(pointLight1);
 
     const pointLight2 = new THREE.PointLight(0xff4500, 0.8);
     pointLight2.position.set(-8, -8, 8);
+    pointLight2.name = 'pointLight2';
     this.scene.add(pointLight2);
 
     this.camera.position.z = 9;
@@ -86,6 +109,17 @@ export class ThreeScene {
       // Add gentle pulsing effect
       const time = Date.now() * 0.001;
       this.icosahedron.scale.setScalar(1 + Math.sin(time * 0.5) * 0.05);
+      
+      // Enhanced lighting effects
+      const pointLight1 = this.scene.getObjectByName('pointLight1') as THREE.PointLight;
+      const pointLight2 = this.scene.getObjectByName('pointLight2') as THREE.PointLight;
+      
+      if (pointLight1) {
+        pointLight1.intensity = 0.6 + Math.sin(time * 0.3) * 0.1;
+      }
+      if (pointLight2) {
+        pointLight2.intensity = 0.8 + Math.sin(time * 0.4) * 0.1;
+      }
     }
     
     this.renderer.render(this.scene, this.camera);

@@ -92,9 +92,9 @@ export default function Dashboard() {
 
 
               <div className="space-y-8">
-                {/* Brand Subtitle */}
+                {/* Brand Subtitle - Moved to be less prominent */}
                 <motion.p 
-                  className="text-lg text-gray-500 font-medium tracking-wide"
+                  className="text-sm text-gray-400 font-medium tracking-wide uppercase"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
@@ -132,7 +132,7 @@ export default function Dashboard() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Explore four powerful AI studios to generate content, optimize code, analyze documents, and craft engaging stories.
+                  Accelerate innovation. Explore four powerful AI studios to generate compelling content, optimize code, analyze documents, and craft engaging stories for your enterprise.
                 </motion.p>
               </div>
               
@@ -148,7 +148,7 @@ export default function Dashboard() {
                   onClick={() => handleStudioClick('text')}
                 >
                   <span className="flex items-center space-x-3 relative z-10">
-                    <span>Launch Your Studio</span>
+                    <span>Start Creating</span>
                     <motion.div
                       initial={{ x: 0 }}
                       whileHover={{ x: 8 }}
@@ -161,6 +161,18 @@ export default function Dashboard() {
                   <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
                   <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </Button>
+              </motion.div>
+
+              {/* Secondary CTA */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="text-center lg:text-left"
+              >
+                <button className="text-orange-600 hover:text-orange-700 font-medium text-lg transition-colors duration-200 hover:underline">
+                  Learn More
+                </button>
               </motion.div>
 
               {/* Compact Real-time Metrics */}
@@ -199,9 +211,19 @@ export default function Dashboard() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <div className="w-[520px] h-[520px] xl:w-[560px] xl:h-[560px] relative overflow-hidden rounded-2xl">
-                {/* Enhanced backdrop with darker background */}
+                {/* Enhanced backdrop with darker background and enterprise texture */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-orange-500/8 via-transparent to-red-500/8 rounded-2xl blur-3xl"></div>
+                
+                {/* Subtle enterprise grid pattern */}
+                <div className="absolute inset-0 opacity-5" style={{
+                  backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,106,0,0.3) 1px, transparent 0)',
+                  backgroundSize: '20px 20px'
+                }}></div>
+                
+                {/* Visual connection elements */}
+                <div className="absolute left-0 top-1/2 w-32 h-px bg-gradient-to-r from-orange-500/20 to-transparent"></div>
+                <div className="absolute right-0 top-1/2 w-32 h-px bg-gradient-to-l from-orange-500/20 to-transparent"></div>
                 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />

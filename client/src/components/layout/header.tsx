@@ -71,8 +71,8 @@ export default function Header() {
                 <span className="text-2xl font-black bg-gradient-to-r from-gray-900 via-orange-700 to-gray-900 bg-clip-text text-transparent leading-tight">
                   Cerebras Studio
                 </span>
-                <div className="text-xs text-gray-500 font-bold tracking-wider uppercase opacity-80">
-                  Enterprise AI Platform
+                <div className="text-xs text-gray-400 font-bold tracking-wider uppercase opacity-80">
+                  Powered by Cerebras Intelligence
                 </div>
               </div>
             </Link>
