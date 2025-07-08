@@ -165,7 +165,7 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Subtle 3D Visual Support - Scaled for Typography Hierarchy */}
+            {/* Right Side - Subtle 3D Visual Support - Dynamically Scaled for Typography Hierarchy */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -177,7 +177,10 @@ export default function Dashboard() {
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-50/10 via-transparent to-gray-100/10 rounded-2xl blur-2xl"></div>
 
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <HeroCanvas />
+                  <HeroCanvas 
+                    titleSize={96} // Represents text-5xl to text-8xl range
+                    subtitleSize={20} // Represents text-lg to text-xl range
+                  />
                 </div>
 
                 {/* Ultra-subtle floating elements that don't compete with typography */}
