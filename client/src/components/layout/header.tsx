@@ -23,6 +23,7 @@ export default function Header() {
     { name: 'Dashboard', href: '/' },
     { name: 'Projects', href: '/projects' },
     { name: 'Analytics', href: '/analytics' },
+    { name: 'Settings', href: '/settings' },
   ];
 
   const isActive = (href: string) => {

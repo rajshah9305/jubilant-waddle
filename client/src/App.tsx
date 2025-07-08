@@ -9,6 +9,7 @@ import Dashboard from "@/pages/dashboard";
 import Studio from "@/pages/studio";
 import Projects from "@/pages/projects";
 import Analytics from "@/pages/analytics";
+import Settings from "@/pages/settings";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/layout/header";
 
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/studio/:studioType?" component={Studio} />
         <Route path="/projects" component={Projects} />
         <Route path="/analytics" component={Analytics} />
+        <Route path="/settings" component={Settings} />
         <Route component={NotFound} />
       </Switch>
     </div>
