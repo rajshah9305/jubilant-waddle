@@ -3,7 +3,6 @@ import { Send, Copy, ThumbsUp, ThumbsDown, Trash2, Download, BrainCircuit, User 
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
-import { FileUploadButton } from './file-upload-button';
 import { useChat } from '@/hooks/use-chat';
 import { StudioType } from '@/types/studio';
 import { useToast } from '@/hooks/use-toast';
@@ -98,19 +97,6 @@ export function ChatInterface({
         description: "Failed to copy message",
         variant: "destructive",
       });
-    }
-  };
-
-  const handleFileUpload = (files: File[]) => {
-    // Process uploaded files and add to chat context
-    const fileInfo = files.map(file => `[File: ${file.name} (${(file.size / 1024).toFixed(1)}KB)]`).join(' ');
-    const fileMessage = `I've attached ${files.length} file(s): ${fileInfo}. Please analyze these files.`;
-    
-    // Auto-send file upload message
-    if (apiKeyValid) {
-      sendMessage(fileMessage);
-    } else {
-      onApiKeyRequired();
     }
   };
 
@@ -217,7 +203,7 @@ export function ChatInterface({
 
       {/* Chat Input */}
       <div className="bg-white border-t border-gray-200 p-4">
-        <div className="flex items-end space-x-2">
+        <div className="flex items-end space-x-4">
           <div className="flex-1 relative">
             <Textarea
               ref={textareaRef}
@@ -229,25 +215,13 @@ export function ChatInterface({
               disabled={isStreaming}
             />
           </div>
-          <div className="flex items-center space-x-1">
-            <FileUploadButton
-              onFileUpload={handleFileUpload}
-              disabled={isStreaming}
-              acceptedTypes={
-                studioType === 'document' 
-                  ? ['.pdf', '.txt', '.doc', '.docx', '.md', '.json'] 
-                  : ['.txt', '.md', '.json']
-              }
-              maxFiles={studioType === 'document' ? 5 : 3}
-            />
-            <Button 
-              onClick={handleSend}
-              disabled={!input.trim() || isStreaming}
-              className="bg-primary hover:bg-primary/90 px-6"
-            >
-              <Send className="w-5 h-5" />
-            </Button>
-          </div>
+          <Button 
+            onClick={handleSend}
+            disabled={!input.trim() || isStreaming}
+            className="bg-primary hover:bg-primary/90 px-6"
+          >
+            <Send className="w-5 h-5" />
+          </Button>
         </div>
       </div>
     </div>
