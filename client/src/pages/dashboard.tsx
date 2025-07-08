@@ -14,30 +14,30 @@ const studioConfigs = [
   {
     id: 'text' as StudioType,
     title: 'Text Generation',
-    description: 'Create compelling content, articles, and marketing copy with advanced AI text generation.',
+    description: 'Create compelling content, articles, and marketing copy with advanced AI text generation powered by cutting-edge technology.',
     icon: PenTool,
-    tags: ['Articles', 'Marketing', 'Blog Posts'],
+    tags: ['Marketing Copy', 'Blog Articles', 'Social Media'],
   },
   {
     id: 'code' as StudioType,
     title: 'Code Generation',
-    description: 'Generate, debug, and optimize code across multiple programming languages.',
+    description: 'Generate, debug, and optimize code across multiple programming languages with intelligent suggestions.',
     icon: Code,
-    tags: ['Python', 'JavaScript', 'React'],
+    tags: ['Python & JS', 'React & Vue', 'API Design'],
   },
   {
     id: 'document' as StudioType,
     title: 'Document AI',
-    description: 'Analyze, summarize, and extract insights from documents and PDFs.',
+    description: 'Analyze, summarize, and extract insights from documents, PDFs, and complex data sources instantly.',
     icon: FileText,
-    tags: ['Analysis', 'Summary', 'Extract'],
+    tags: ['PDF Analysis', 'Data Extract', 'Smart Summary'],
   },
   {
     id: 'creative' as StudioType,
     title: 'Creative Writing',
-    description: 'Craft stories, poetry, screenplays, and creative content with AI-powered inspiration.',
+    description: 'Craft engaging stories, poetry, screenplays, and creative content with AI-powered inspiration and guidance.',
     icon: Feather,
-    tags: ['Stories', 'Poetry', 'Scripts'],
+    tags: ['Story Crafting', 'Poetry & Prose', 'Script Writing'],
   },
 ];
 
@@ -78,9 +78,9 @@ export default function Dashboard() {
               
 
 
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <motion.h1 
-                  className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 leading-tight tracking-tight"
+                  className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -95,7 +95,7 @@ export default function Dashboard() {
                   >
                     Studio
                     <motion.div
-                      className="absolute -bottom-2 left-0 h-1 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
+                      className="absolute -bottom-3 left-0 h-1.5 bg-gradient-to-r from-orange-500 to-red-500 rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ duration: 1.2, delay: 1 }}
@@ -104,7 +104,7 @@ export default function Dashboard() {
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-xl text-gray-600 max-w-2xl leading-relaxed font-light"
+                  className="text-2xl md:text-3xl text-gray-600 max-w-2xl leading-relaxed font-light"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -121,21 +121,22 @@ export default function Dashboard() {
               >
                 <Button 
                   size="lg"
-                  className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-10 py-5 text-xl font-bold shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:scale-105 border-0 rounded-xl relative overflow-hidden group"
+                  className="bg-gradient-to-r from-orange-500 via-orange-600 to-red-500 hover:from-orange-600 hover:via-red-500 hover:to-orange-700 text-white px-12 py-6 text-2xl font-black shadow-2xl hover:shadow-orange-500/35 transition-all duration-400 transform hover:scale-110 border-0 rounded-2xl relative overflow-hidden group"
                   onClick={() => handleStudioClick('text')}
                 >
-                  <span className="flex items-center space-x-2 relative z-10">
+                  <span className="flex items-center space-x-3 relative z-10">
                     <span>Start Creating</span>
                     <motion.div
                       initial={{ x: 0 }}
-                      whileHover={{ x: 5 }}
+                      whileHover={{ x: 8 }}
                       transition={{ type: "spring", stiffness: 400 }}
-                      className="text-2xl"
+                      className="text-3xl"
                     >
                       →
                     </motion.div>
                   </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-red-500 via-orange-600 to-orange-700 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+                  <div className="absolute inset-0 animate-pulse bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                 </Button>
               </motion.div>
 
@@ -237,8 +238,8 @@ export default function Dashboard() {
         </div>
       </section>
 
-      {/* Studios Grid Section - Compact Design */}
-      <section className="py-16 bg-gradient-to-br from-white via-orange-50/20 to-gray-50 relative overflow-hidden">
+      {/* Studios Grid Section - Enhanced Design */}
+      <section className="py-20 bg-gradient-to-br from-white via-orange-50/30 to-gray-50/80 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-12"
@@ -248,26 +249,27 @@ export default function Dashboard() {
             viewport={{ once: true }}
           >
 
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               Choose Your{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Creative Studio
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
+            <p className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               Four specialized AI environments designed for different creative workflows
             </p>
           </motion.div>
 
-          {/* Consistent Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {/* Enhanced Grid Layout with Better Spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 lg:gap-10">
             {studioConfigs.map((studio, index) => (
               <motion.div
                 key={studio.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.7, delay: index * 0.15, type: "spring", damping: 25 }}
                 viewport={{ once: true }}
+                className="h-full"
               >
                 <StudioCard
                   {...studio}
@@ -289,13 +291,13 @@ export default function Dashboard() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               How It{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Works
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Get started in three simple steps
             </p>
           </motion.div>
@@ -349,13 +351,13 @@ export default function Dashboard() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               Trusted by{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Creators
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               See what our users are saying about their creative experience
             </p>
           </motion.div>
@@ -450,7 +452,7 @@ export default function Dashboard() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               Why Choose{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Our Platform
@@ -508,7 +510,7 @@ export default function Dashboard() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               Frequently Asked{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Questions
@@ -565,13 +567,13 @@ export default function Dashboard() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6 leading-tight">
+            <h2 className="text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-8 leading-tight">
               Enterprise-Grade{' '}
               <span className="bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
                 Security
               </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-2xl md:text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Your data is protected with the highest security standards
             </p>
           </motion.div>
