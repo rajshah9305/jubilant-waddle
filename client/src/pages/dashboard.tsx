@@ -165,71 +165,71 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Premium 3D Visual Experience - Properly Sized to Prevent Clipping */}
+            {/* Right Side - Subtle 3D Visual Support - Scaled for Typography Hierarchy */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
-                {/* Professional backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100/20 via-transparent to-gray-200/20 rounded-2xl blur-3xl"></div>
+              <div className="w-[400px] h-[400px] relative overflow-hidden rounded-2xl">
+                {/* Minimal professional backdrop */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/10 via-transparent to-gray-100/10 rounded-2xl blur-2xl"></div>
 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
 
-                {/* Subtle professional floating elements */}
+                {/* Ultra-subtle floating elements that don't compete with typography */}
                 <motion.div 
-                  className="absolute top-16 left-16 w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-15"
+                  className="absolute top-16 left-16 w-12 h-12 bg-gradient-to-br from-gray-200/20 to-gray-300/20 rounded-full opacity-8"
                   animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.15, 0.25, 0.15]
-                  }}
-                  transition={{ duration: 6, repeat: Infinity }}
-                />
-                <motion.div 
-                  className="absolute bottom-24 right-16 w-12 h-12 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-20"
-                  animate={{ 
-                    y: [0, -10, 0],
-                    scale: [1, 1.05, 1]
-                  }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                />
-                <motion.div 
-                  className="absolute top-1/2 left-4 w-8 h-8 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-10"
-                  animate={{ 
-                    scale: [1, 1.2, 1],
-                    opacity: [0.1, 0.2, 0.1]
-                  }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                />
-                <motion.div 
-                  className="absolute bottom-16 left-1/3 w-6 h-6 bg-gradient-to-br from-gray-400 to-gray-500 rounded-full opacity-15"
-                  animate={{ 
-                    scale: [1, 1.1, 1],
-                    rotate: [0, 90, 180]
+                    scale: [1, 1.05, 1],
+                    opacity: [0.08, 0.12, 0.08]
                   }}
                   transition={{ duration: 8, repeat: Infinity }}
                 />
-
-                {/* Additional minimal visual elements */}
                 <motion.div 
-                  className="absolute top-1/3 right-8 w-4 h-4 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-12"
+                  className="absolute bottom-24 right-16 w-8 h-8 bg-gradient-to-br from-gray-300/15 to-gray-400/15 rounded-full opacity-10"
                   animate={{ 
-                    x: [0, 5, 0],
-                    opacity: [0.12, 0.2, 0.12]
+                    y: [0, -6, 0],
+                    scale: [1, 1.03, 1]
                   }}
                   transition={{ duration: 7, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-3/4 left-20 w-3 h-3 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-18"
+                  className="absolute top-1/2 left-4 w-6 h-6 bg-gradient-to-br from-gray-200/15 to-gray-300/15 rounded-full opacity-6"
                   animate={{ 
-                    y: [0, -8, 0],
-                    scale: [1, 1.2, 1]
+                    scale: [1, 1.1, 1],
+                    opacity: [0.06, 0.1, 0.06]
                   }}
                   transition={{ duration: 6, repeat: Infinity }}
+                />
+                <motion.div 
+                  className="absolute bottom-16 left-1/3 w-4 h-4 bg-gradient-to-br from-gray-300/12 to-gray-400/12 rounded-full opacity-8"
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    rotate: [0, 45, 90]
+                  }}
+                  transition={{ duration: 10, repeat: Infinity }}
+                />
+
+                {/* Minimal accent elements */}
+                <motion.div 
+                  className="absolute top-1/3 right-8 w-3 h-3 bg-gradient-to-br from-gray-200/10 to-gray-300/10 rounded-full opacity-6"
+                  animate={{ 
+                    x: [0, 3, 0],
+                    opacity: [0.06, 0.1, 0.06]
+                  }}
+                  transition={{ duration: 9, repeat: Infinity }}
+                />
+                <motion.div 
+                  className="absolute top-3/4 left-20 w-2 h-2 bg-gradient-to-br from-gray-200/12 to-gray-300/12 rounded-full opacity-8"
+                  animate={{ 
+                    y: [0, -4, 0],
+                    scale: [1, 1.1, 1]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity }}
                 />
               </div>
             </motion.div>

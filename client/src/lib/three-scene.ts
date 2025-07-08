@@ -29,32 +29,32 @@ export class ThreeScene {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron with darker, more professional styling
-    const geometry = new THREE.IcosahedronGeometry(4.8, 1);
+    // Create main wireframe icosahedron with much darker, subtler styling
+    const geometry = new THREE.IcosahedronGeometry(3.2, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x1a1a1a,
+      color: 0x0a0a0a,
       wireframe: true,
       transparent: true,
-      opacity: 0.95
+      opacity: 0.35
     });
     
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
 
-    // Professional minimal lighting setup
-    const ambientLight = new THREE.AmbientLight(0x333333, 0.3);
+    // Minimal ambient lighting for subtle depth
+    const ambientLight = new THREE.AmbientLight(0x1a1a1a, 0.15);
     this.scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
+    const directionalLight = new THREE.DirectionalLight(0x333333, 0.25);
     directionalLight.position.set(10, 10, 10);
     this.scene.add(directionalLight);
 
-    // Subtle accent lighting for depth
-    const pointLight1 = new THREE.PointLight(0x666666, 0.4);
+    // Very subtle accent lighting for minimal depth
+    const pointLight1 = new THREE.PointLight(0x2a2a2a, 0.2);
     pointLight1.position.set(8, 8, 8);
     this.scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0x444444, 0.3);
+    const pointLight2 = new THREE.PointLight(0x1f1f1f, 0.15);
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 
@@ -72,8 +72,8 @@ export class ThreeScene {
     this.animationId = requestAnimationFrame(this.animate);
     
     if (this.icosahedron) {
-      this.icosahedron.rotation.x += 0.008;
-      this.icosahedron.rotation.y += 0.012;
+      this.icosahedron.rotation.x += 0.004;
+      this.icosahedron.rotation.y += 0.006;
     }
     
     this.renderer.render(this.scene, this.camera);
