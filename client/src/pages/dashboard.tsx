@@ -172,16 +172,17 @@ export default function Dashboard() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[400px] h-[400px] relative overflow-hidden rounded-2xl">
-                {/* Minimal professional backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/10 via-transparent to-gray-100/10 rounded-2xl blur-2xl"></div>
+              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
+                {/* Enhanced professional backdrop for visual hierarchy */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100/15 via-transparent to-gray-200/15 rounded-2xl blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-orange-50/20 via-transparent to-red-50/20 rounded-2xl blur-2xl"></div>
 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas 
-                    titleSize={96} // Represents text-5xl to text-8xl range
-                    subtitleSize={20} // Represents text-lg to text-xl range
+                    titleSize={112} // Enhanced title size for stronger hierarchy 
+                    subtitleSize={24} // Proportional subtitle size
                   />
-                </div>
+                </div>v>
 
                 {/* Ultra-subtle floating elements that don't compete with typography */}
                 <motion.div 

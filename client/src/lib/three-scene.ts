@@ -33,36 +33,37 @@ export class ThreeScene {
     // Calculate dynamic scale based on typography hierarchy
     this.calculateDynamicScale(options);
 
-    // Create main wireframe icosahedron with much darker, subtler styling
-    const geometry = new THREE.IcosahedronGeometry(3.2 * this.baseScale, 1);
+    // Create main wireframe icosahedron with enhanced scaling for better visual hierarchy
+    const geometry = new THREE.IcosahedronGeometry(2.8 * this.baseScale, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x0a0a0a,
+      color: 0x2a2a2a,
       wireframe: true,
       transparent: true,
-      opacity: 0.35
+      opacity: 0.6
     });
     
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
 
-    // Minimal ambient lighting for subtle depth
-    const ambientLight = new THREE.AmbientLight(0x1a1a1a, 0.15);
+    // Enhanced lighting for better depth and hierarchy
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
     this.scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0x333333, 0.25);
+    const directionalLight = new THREE.DirectionalLight(0x666666, 0.4);
     directionalLight.position.set(10, 10, 10);
     this.scene.add(directionalLight);
 
-    // Very subtle accent lighting for minimal depth
-    const pointLight1 = new THREE.PointLight(0x2a2a2a, 0.2);
+    // Accent lighting for visual prominence
+    const pointLight1 = new THREE.PointLight(0x4a4a4a, 0.3);
     pointLight1.position.set(8, 8, 8);
     this.scene.add(pointLight1);
 
-    const pointLight2 = new THREE.PointLight(0x1f1f1f, 0.15);
+    const pointLight2 = new THREE.PointLight(0x333333, 0.25);
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 
-    this.camera.position.z = 9;
+    // Optimal camera position to show complete model with proper hierarchy
+    this.camera.position.z = 12;
 
     // Start animation
     this.animate();
@@ -107,40 +108,37 @@ export class ThreeScene {
     // Calculate hierarchy ratio (title prominence relative to subtitle)
     const hierarchyRatio = titleSize / subtitleSize;
     
-    // Scale model based on hierarchy strength
-    // Strong hierarchy (ratio > 4) = larger model to match title impact
-    // Moderate hierarchy (ratio 2-4) = balanced model size
-    // Weak hierarchy (ratio < 2) = smaller, more subtle model
+    // Enhanced scale model based on hierarchy strength for better visual prominence
     let scaleMultiplier: number;
     
     if (hierarchyRatio > 4.5) {
-      // Very strong hierarchy - model supports title dominance
-      scaleMultiplier = 1.2 + (hierarchyRatio - 4.5) * 0.15;
+      // Very strong hierarchy - prominent model to match title impact
+      scaleMultiplier = 1.6 + (hierarchyRatio - 4.5) * 0.2;
     } else if (hierarchyRatio > 3) {
-      // Strong hierarchy - model complements title
-      scaleMultiplier = 1.0 + (hierarchyRatio - 3) * 0.13;
+      // Strong hierarchy - noticeable model complements title
+      scaleMultiplier = 1.3 + (hierarchyRatio - 3) * 0.2;
     } else if (hierarchyRatio > 2) {
-      // Moderate hierarchy - balanced approach
-      scaleMultiplier = 0.85 + (hierarchyRatio - 2) * 0.15;
+      // Moderate hierarchy - balanced but prominent approach
+      scaleMultiplier = 1.1 + (hierarchyRatio - 2) * 0.2;
     } else {
-      // Weak hierarchy - subtle, supportive model
-      scaleMultiplier = 0.7 + hierarchyRatio * 0.075;
+      // Weak hierarchy - still visible but supportive model
+      scaleMultiplier = 0.9 + hierarchyRatio * 0.1;
     }
     
     // Apply responsive adjustments based on container size
     const containerArea = this.renderer.domElement.parentElement?.clientWidth || 400;
-    const responsiveMultiplier = Math.max(0.7, Math.min(1.2, containerArea / 400));
+    const responsiveMultiplier = Math.max(0.8, Math.min(1.4, containerArea / 400));
     
-    // Final scale calculation with bounds
-    this.baseScale = Math.max(0.6, Math.min(1.5, scaleMultiplier * responsiveMultiplier));
+    // Final scale calculation with enhanced bounds for better visibility
+    this.baseScale = Math.max(0.8, Math.min(2.2, scaleMultiplier * responsiveMultiplier));
   }
 
   public updateScale(titleSize: number, subtitleSize: number) {
     this.calculateDynamicScale({ titleSize, subtitleSize });
     
     if (this.icosahedron) {
-      // Smooth transition to new scale
-      const targetScale = 3.2 * this.baseScale;
+      // Smooth transition to new scale with better proportions
+      const targetScale = 2.8 * this.baseScale;
       this.icosahedron.scale.setScalar(targetScale);
     }
   }
