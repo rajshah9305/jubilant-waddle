@@ -65,7 +65,7 @@ export default function Dashboard() {
       {/* Hero Section - Compact Design */}
       <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
             {/* Left Content - Enhanced Premium Design */}
             <motion.div 
               className="space-y-10 relative z-10"
@@ -165,71 +165,91 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Subtle 3D Visual Support - Scaled for Typography Hierarchy */}
+            {/* Right Side - Enhanced 3D Visual Support - Scaled Proportionally to Hero Typography */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[400px] h-[400px] relative overflow-hidden rounded-2xl">
-                {/* Minimal professional backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/10 via-transparent to-gray-100/10 rounded-2xl blur-2xl"></div>
+              <div className="w-[560px] h-[560px] relative overflow-hidden rounded-3xl">
+                {/* Enhanced professional backdrop with subtle glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-50/20 via-transparent to-gray-100/15 rounded-3xl blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-3xl blur-2xl animate-pulse"></div>
 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
 
-                {/* Ultra-subtle floating elements that don't compete with typography */}
+                {/* Enhanced floating elements proportional to larger 3D model */}
                 <motion.div 
-                  className="absolute top-16 left-16 w-12 h-12 bg-gradient-to-br from-gray-200/20 to-gray-300/20 rounded-full opacity-8"
+                  className="absolute top-20 left-20 w-16 h-16 bg-gradient-to-br from-gray-200/25 to-gray-300/25 rounded-full opacity-12"
                   animate={{ 
-                    scale: [1, 1.05, 1],
-                    opacity: [0.08, 0.12, 0.08]
+                    scale: [1, 1.08, 1],
+                    opacity: [0.12, 0.18, 0.12]
                   }}
                   transition={{ duration: 8, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute bottom-24 right-16 w-8 h-8 bg-gradient-to-br from-gray-300/15 to-gray-400/15 rounded-full opacity-10"
+                  className="absolute bottom-32 right-20 w-12 h-12 bg-gradient-to-br from-gray-300/20 to-gray-400/20 rounded-full opacity-15"
                   animate={{ 
-                    y: [0, -6, 0],
-                    scale: [1, 1.03, 1]
+                    y: [0, -8, 0],
+                    scale: [1, 1.05, 1]
                   }}
                   transition={{ duration: 7, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-1/2 left-4 w-6 h-6 bg-gradient-to-br from-gray-200/15 to-gray-300/15 rounded-full opacity-6"
+                  className="absolute top-1/2 left-6 w-10 h-10 bg-gradient-to-br from-gray-200/18 to-gray-300/18 rounded-full opacity-10"
                   animate={{ 
-                    scale: [1, 1.1, 1],
-                    opacity: [0.06, 0.1, 0.06]
+                    scale: [1, 1.12, 1],
+                    opacity: [0.10, 0.15, 0.10]
                   }}
                   transition={{ duration: 6, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute bottom-16 left-1/3 w-4 h-4 bg-gradient-to-br from-gray-300/12 to-gray-400/12 rounded-full opacity-8"
+                  className="absolute bottom-20 left-1/3 w-8 h-8 bg-gradient-to-br from-gray-300/15 to-gray-400/15 rounded-full opacity-12"
                   animate={{ 
-                    scale: [1, 1.05, 1],
+                    scale: [1, 1.08, 1],
                     rotate: [0, 45, 90]
                   }}
                   transition={{ duration: 10, repeat: Infinity }}
                 />
 
-                {/* Minimal accent elements */}
+                {/* Enhanced accent elements */}
                 <motion.div 
-                  className="absolute top-1/3 right-8 w-3 h-3 bg-gradient-to-br from-gray-200/10 to-gray-300/10 rounded-full opacity-6"
+                  className="absolute top-1/3 right-12 w-6 h-6 bg-gradient-to-br from-gray-200/15 to-gray-300/15 rounded-full opacity-10"
                   animate={{ 
-                    x: [0, 3, 0],
-                    opacity: [0.06, 0.1, 0.06]
+                    x: [0, 5, 0],
+                    opacity: [0.10, 0.15, 0.10]
                   }}
                   transition={{ duration: 9, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-3/4 left-20 w-2 h-2 bg-gradient-to-br from-gray-200/12 to-gray-300/12 rounded-full opacity-8"
+                  className="absolute top-3/4 left-28 w-4 h-4 bg-gradient-to-br from-gray-200/18 to-gray-300/18 rounded-full opacity-12"
                   animate={{ 
+                    y: [0, -6, 0],
+                    scale: [1, 1.15, 1]
+                  }}
+                  transition={{ duration: 8, repeat: Infinity }}
+                />
+
+                {/* Additional engaging elements for the enlarged space */}
+                <motion.div 
+                  className="absolute top-1/4 right-1/4 w-5 h-5 bg-gradient-to-br from-orange-200/10 to-red-200/10 rounded-full opacity-8"
+                  animate={{ 
+                    scale: [1, 1.2, 1],
+                    rotate: [0, 180, 360]
+                  }}
+                  transition={{ duration: 12, repeat: Infinity }}
+                />
+                <motion.div 
+                  className="absolute bottom-1/4 left-1/4 w-7 h-7 bg-gradient-to-br from-gray-300/12 to-gray-400/12 rounded-full opacity-10"
+                  animate={{ 
+                    x: [0, 4, 0],
                     y: [0, -4, 0],
                     scale: [1, 1.1, 1]
                   }}
-                  transition={{ duration: 8, repeat: Infinity }}
+                  transition={{ duration: 11, repeat: Infinity }}
                 />
               </div>
             </motion.div>

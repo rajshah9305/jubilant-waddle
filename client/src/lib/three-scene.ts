@@ -29,13 +29,13 @@ export class ThreeScene {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron with much darker, subtler styling
-    const geometry = new THREE.IcosahedronGeometry(3.2, 1);
+    // Create main wireframe icosahedron with enhanced size for better visual impact
+    const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
       color: 0x0a0a0a,
       wireframe: true,
       transparent: true,
-      opacity: 0.35
+      opacity: 0.45
     });
     
     this.icosahedron = new THREE.Mesh(geometry, material);
@@ -58,7 +58,7 @@ export class ThreeScene {
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 
-    this.camera.position.z = 9;
+    this.camera.position.z = 12;
 
     // Start animation
     this.animate();
