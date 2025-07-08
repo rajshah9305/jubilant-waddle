@@ -65,19 +65,7 @@ export default function Dashboard() {
       {/* Hero Section - Compact Design */}
       <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
-          {/* Mobile Globe Background */}
-          <motion.div 
-            className="lg:hidden absolute inset-0 opacity-20 pointer-events-none"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
-            transition={{ duration: 1 }}
-          >
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80">
-              <HeroCanvas />
-            </div>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
             {/* Left Content - Enhanced Premium Design */}
             <motion.div 
               className="space-y-10 relative z-10"
@@ -92,16 +80,6 @@ export default function Dashboard() {
 
 
               <div className="space-y-8">
-                {/* Brand Subtitle - Moved to be less prominent */}
-                <motion.p 
-                  className="text-sm text-gray-400 font-medium tracking-wide uppercase"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                  Powered by Cerebras Intelligence
-                </motion.p>
-
                 <motion.h1 
                   className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 30 }}
@@ -132,7 +110,7 @@ export default function Dashboard() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Accelerate innovation. Explore four powerful AI studios to generate compelling content, optimize code, analyze documents, and craft engaging stories for your enterprise.
+                  Unleash your creativity with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
                 </motion.p>
               </div>
               
@@ -163,18 +141,6 @@ export default function Dashboard() {
                 </Button>
               </motion.div>
 
-              {/* Secondary CTA */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.2 }}
-                className="text-center lg:text-left"
-              >
-                <button className="text-orange-600 hover:text-orange-700 font-medium text-lg transition-colors duration-200 hover:underline">
-                  Learn More
-                </button>
-              </motion.div>
-
               {/* Compact Real-time Metrics */}
               <motion.div 
                 className="grid grid-cols-2 gap-4 pt-6"
@@ -203,33 +169,22 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Premium 3D Visual Experience - Responsive and Properly Sized */}
+            {/* Right Side - Premium 3D Visual Experience - Properly Sized to Prevent Clipping */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[520px] h-[520px] xl:w-[560px] xl:h-[560px] relative overflow-hidden rounded-2xl">
-                {/* Enhanced backdrop with darker background and enterprise texture */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/8 via-transparent to-red-500/8 rounded-2xl blur-3xl"></div>
-                
-                {/* Subtle enterprise grid pattern */}
-                <div className="absolute inset-0 opacity-5" style={{
-                  backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,106,0,0.3) 1px, transparent 0)',
-                  backgroundSize: '20px 20px'
-                }}></div>
-                
-                {/* Visual connection elements */}
-                <div className="absolute left-0 top-1/2 w-32 h-px bg-gradient-to-r from-orange-500/20 to-transparent"></div>
-                <div className="absolute right-0 top-1/2 w-32 h-px bg-gradient-to-l from-orange-500/20 to-transparent"></div>
+              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
+                {/* Premium backdrop */}
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-2xl blur-3xl"></div>
                 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
                 
-                {/* Enhanced floating elements with proper scaling for 520px container */}
+                {/* Enhanced floating elements with proper scaling for 500px container */}
                 <motion.div 
                   className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-25"
                   animate={{ 

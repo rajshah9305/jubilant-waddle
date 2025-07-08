@@ -30,7 +30,7 @@ export function HeroCanvas({ className }: HeroCanvasProps) {
     <div 
       ref={containerRef} 
       className={`w-full h-full ${className || ''}`}
-      style={{ minHeight: '520px', height: '520px' }}
+      style={{ minHeight: '500px', height: '500px' }}
     />
   );
 }

@@ -29,10 +29,10 @@ export class ThreeScene {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron with enhanced visual effects
+    // Create main wireframe icosahedron (properly sized to fit in container)
     const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0xff6a00, // Updated to match brand color scheme
+      color: 0xff8c00,
       wireframe: true,
       transparent: true,
       opacity: 0.9
@@ -41,51 +41,16 @@ export class ThreeScene {
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
 
-    // Add subtle glow effect with additional wireframe layer
-    const glowGeometry = new THREE.IcosahedronGeometry(4.9, 1);
-    const glowMaterial = new THREE.MeshBasicMaterial({
-      color: 0xff6a00,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.3
-    });
-    
-    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
-    this.scene.add(glowMesh);
-
-    // Add connecting lines for enterprise visual integration
-    const connectionGeometry = new THREE.BufferGeometry();
-    const connectionPositions = new Float32Array([
-      -8, -2, 0,   // left connection point
-      -3, 0, 0,    // to globe
-      8, 2, 0,     // right connection point
-      3, 0, 0,     // to globe
-      0, -6, 0,    // bottom connection
-      0, -2, 0,    // to globe
-    ]);
-    
-    connectionGeometry.setAttribute('position', new THREE.BufferAttribute(connectionPositions, 3));
-    const connectionMaterial = new THREE.LineBasicMaterial({
-      color: 0xff6a00,
-      transparent: true,
-      opacity: 0.1
-    });
-    
-    const connectionLines = new THREE.LineSegments(connectionGeometry, connectionMaterial);
-    this.scene.add(connectionLines);
-
     // Enhanced lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     this.scene.add(ambientLight);
 
     const pointLight1 = new THREE.PointLight(0xff8c00, 1.2);
     pointLight1.position.set(8, 8, 8);
-    pointLight1.name = 'pointLight1';
     this.scene.add(pointLight1);
 
     const pointLight2 = new THREE.PointLight(0xff4500, 0.8);
     pointLight2.position.set(-8, -8, 8);
-    pointLight2.name = 'pointLight2';
     this.scene.add(pointLight2);
 
     this.camera.position.z = 9;
@@ -102,24 +67,8 @@ export class ThreeScene {
     this.animationId = requestAnimationFrame(this.animate);
     
     if (this.icosahedron) {
-      // Slower, more elegant rotation
-      this.icosahedron.rotation.x += 0.005;
-      this.icosahedron.rotation.y += 0.008;
-      
-      // Add gentle pulsing effect
-      const time = Date.now() * 0.001;
-      this.icosahedron.scale.setScalar(1 + Math.sin(time * 0.5) * 0.05);
-      
-      // Enhanced lighting effects
-      const pointLight1 = this.scene.getObjectByName('pointLight1') as THREE.PointLight;
-      const pointLight2 = this.scene.getObjectByName('pointLight2') as THREE.PointLight;
-      
-      if (pointLight1) {
-        pointLight1.intensity = 0.6 + Math.sin(time * 0.3) * 0.1;
-      }
-      if (pointLight2) {
-        pointLight2.intensity = 0.8 + Math.sin(time * 0.4) * 0.1;
-      }
+      this.icosahedron.rotation.x += 0.008;
+      this.icosahedron.rotation.y += 0.012;
     }
     
     this.renderer.render(this.scene, this.camera);
