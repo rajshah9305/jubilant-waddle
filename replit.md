@@ -103,7 +103,60 @@ Cerebras Studio is a full-stack AI creative platform that provides four speciali
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+- **Simplified 3D Visual Design** (July 07, 2025):
+  - Simplified Three.js 3D model to show only wireframe globe for cleaner, futuristic look
+  - Removed orbital rings, inner sphere, and particles for better visual focus
+  - Increased wireframe globe size (4.5 radius) to establish clear visual hierarchy
+  - Added complementary floating gradient elements around the 3D model
+
+- **Improved Studio Cards Layout** (July 07, 2025):
+  - Redesigned studio cards for consistent vertical layout across all breakpoints
+  - Centered content alignment with larger gradient icons and improved hover effects
+  - Updated grid layout for better visual balance (xl:grid-cols-4 for larger screens)
+
+- **Interactive File Upload Integration** (July 07, 2025):
+  - Added file upload button next to the send button in chat interface
+  - Created FileUploadButton component with attachment indicator and preview
+  - Integrated file context into chat messages with automatic file analysis prompts
+  - Different file type support based on studio type (document studio supports more formats)
+
+- **Document AI Studio Interface Refinement** (July 07, 2025):
+  - Removed file upload section from Document AI Studio page for cleaner UI
+  - Focused interface purely on chat and interaction area
+  - Kept file upload option only next to the send button for streamlined experience
+
+- **Premium Landing Page Design Overhaul** (July 07, 2025):
+  - Enhanced hero section with modern typography, larger fonts (6xl-8xl), and premium animations
+  - Added animated gradient text effects and progressive reveals for visual sophistication
+  - Redesigned CTA buttons with advanced hover effects, shadows, and micro-interactions
+  - Enhanced 3D visual area with premium floating elements and coordinated animations
+  - Upgraded studio cards with glass morphism, animated borders, and enhanced hover states
+  - Applied award-worthy design principles for Awwwards-level aesthetic quality
+
+- **Mobile-Optimized Compact Design** (July 07, 2025):
+  - Decreased hero title font sizes (4xl-6xl) and subtitle text for better mobile fit
+  - Removed "Watch Demo" button and "Powered by Advanced AI Technology" badge for cleaner layout
+  - Removed "Four Powerful AI Studios" text from studios section
+  - Reduced hero section height (80vh) and component padding to fit content on single screen
+  - Compact metrics cards and 3D visual area for better mobile/laptop viewing
+
+- **PostgreSQL Database Integration** (July 07, 2025):
+  - Added PostgreSQL database with Neon Database integration
+  - Implemented PostgresStorage class with full CRUD operations for users, projects, and chat messages
+  - Configured database migrations with Drizzle ORM
+  - Added fallback to in-memory storage for development environments
+  - Environment variables configured for secure database connection
+
+- **Enhanced Visual Hierarchy** (July 07, 2025):
+  - Increased hero title font sizes (5xl-7xl) for stronger visual impact
+  - Enhanced subtitle text size (xl) and maximum width for better readability
+  - Enlarged "Start Creating" button with larger padding and text (xl) for clear call-to-action
+  - Increased studios section heading size (4xl-5xl) for better section hierarchy
+  - Maintained consistent typography scaling across all breakpoints
+
 ## Changelog
 
 Changelog:
-- July 07, 2025. Initial setup
+- July 07, 2025. Initial setup and major UI enhancements

@@ -28,27 +28,31 @@ export class ThreeScene {
     this.renderer.setClearColor(0x000000, 0);
     container.appendChild(this.renderer.domElement);
 
-    // Create wireframe icosahedron
-    const geometry = new THREE.IcosahedronGeometry(2, 1);
+    // Create main wireframe icosahedron (larger for better visual hierarchy)
+    const geometry = new THREE.IcosahedronGeometry(4.5, 1);
     const material = new THREE.MeshBasicMaterial({
       color: 0xff8c00,
       wireframe: true,
       transparent: true,
-      opacity: 0.8
+      opacity: 0.9
     });
     
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
 
-    // Add lights
-    const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+    // Enhanced lighting
+    const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
     this.scene.add(ambientLight);
 
-    const pointLight = new THREE.PointLight(0xff8c00, 0.8);
-    pointLight.position.set(5, 5, 5);
-    this.scene.add(pointLight);
+    const pointLight1 = new THREE.PointLight(0xff8c00, 1.2);
+    pointLight1.position.set(8, 8, 8);
+    this.scene.add(pointLight1);
 
-    this.camera.position.z = 5;
+    const pointLight2 = new THREE.PointLight(0xff4500, 0.8);
+    pointLight2.position.set(-8, -8, 8);
+    this.scene.add(pointLight2);
+
+    this.camera.position.z = 8;
 
     // Start animation
     this.animate();
@@ -62,8 +66,8 @@ export class ThreeScene {
     this.animationId = requestAnimationFrame(this.animate);
     
     if (this.icosahedron) {
-      this.icosahedron.rotation.x += 0.005;
-      this.icosahedron.rotation.y += 0.01;
+      this.icosahedron.rotation.x += 0.008;
+      this.icosahedron.rotation.y += 0.012;
     }
     
     this.renderer.render(this.scene, this.camera);
