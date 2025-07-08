@@ -51,82 +51,15 @@ export default function Studio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/40 pt-16 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/40 relative overflow-hidden">
       {/* Ambient background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-400/20 to-red-400/20 rounded-full blur-3xl floating-animation"></div>
         <div className="absolute top-1/2 -left-40 w-60 h-60 bg-gradient-to-br from-blue-400/15 to-purple-400/15 rounded-full blur-3xl floating-animation" style={{animationDelay: '2s'}}></div>
         <div className="absolute bottom-20 right-1/4 w-40 h-40 bg-gradient-to-br from-orange-500/10 to-yellow-400/10 rounded-full blur-2xl floating-animation" style={{animationDelay: '4s'}}></div>
       </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Enhanced Header */}
-        <motion.div 
-          className="glass-effect rounded-2xl p-6 mb-8 premium-shadow"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-6">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setLocation('/')}
-                className="group flex items-center space-x-2 hover:bg-orange-50 hover:text-orange-600 transition-all duration-300 px-4 py-2 rounded-xl magnetic-hover"
-              >
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform duration-300" />
-                <span className="font-semibold">Dashboard</span>
-              </Button>
-              
-              <div className="hidden md:block h-8 w-px bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-              
-              <div className="hidden md:flex items-center space-x-4">
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg pulse-glow">
-                    <Zap className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-                <div>
-                  <h1 className="text-3xl font-black text-gray-900 leading-tight">
-                    {studioTitles[currentStudio]}
-                  </h1>
-                  <p className="text-sm text-gray-500 font-medium">AI-Powered Creative Studio</p>
-                </div>
-              </div>
-            </div>
 
-          {/* Enhanced Action Buttons */}
-            <div className="flex items-center space-x-3">
-              <Button
-                variant="outline"
-                size="sm"
-                className="hidden sm:flex items-center space-x-2 glass-dark hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 magnetic-hover"
-              >
-                <BarChart3 className="w-4 h-4" />
-                <span className="font-medium">Analytics</span>
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                className="hidden sm:flex items-center space-x-2 glass-dark hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 magnetic-hover"
-              >
-                <Share2 className="w-4 h-4" />
-                <span className="font-medium">Share</span>
-              </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex items-center space-x-2 glass-dark hover:bg-orange-50 hover:border-orange-300 transition-all duration-300 magnetic-hover"
-              >
-                <Settings className="w-4 h-4" />
-                <span className="hidden sm:inline font-medium">Settings</span>
-              </Button>
-            </div>
-          </div>
-        </motion.div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
         {/* Enhanced Main Content */}
         <motion.div 
@@ -207,7 +140,7 @@ export default function Studio() {
         onOpenChange={setShowMissingApiKeyModal}
         onConfigureApiKey={handleConfigureApiKey}
       />
-      
+
       <ApiKeyModal
         open={showApiKeyModal}
         onOpenChange={setShowApiKeyModal}

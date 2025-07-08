@@ -61,7 +61,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100/50">
       {/* Hero Section - Compact Design */}
       <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
@@ -77,7 +77,7 @@ export default function Dashboard() {
               <div className="absolute -top-20 -left-20 w-40 h-40 bg-gradient-to-br from-orange-400/15 to-purple-400/10 rounded-full blur-3xl floating-animation"></div>
               <div className="absolute top-1/2 -left-10 w-20 h-20 bg-gradient-to-br from-orange-500/20 to-red-400/15 rounded-full blur-2xl floating-animation" style={{animationDelay: '2s'}}></div>
               <div className="absolute bottom-10 -right-10 w-32 h-32 bg-gradient-to-br from-blue-400/10 to-orange-400/10 rounded-full blur-3xl floating-animation" style={{animationDelay: '4s'}}></div>
-              
+
 
 
               <div className="space-y-8">
@@ -99,7 +99,7 @@ export default function Dashboard() {
                     transition={{ duration: 1.2, delay: 1 }}
                   />
                 </motion.h1>
-                
+
                 <motion.p 
                   className="text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed font-medium"
                   initial={{ opacity: 0 }}
@@ -109,7 +109,7 @@ export default function Dashboard() {
                   Transform your workflow with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
                 </motion.p>
               </div>
-              
+
               <motion.div 
                 className="flex justify-start"
                 initial={{ opacity: 0, y: 20 }}
@@ -175,11 +175,11 @@ export default function Dashboard() {
               <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
                 {/* Professional backdrop */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gray-100/20 via-transparent to-gray-200/20 rounded-2xl blur-3xl"></div>
-                
+
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
-                
+
                 {/* Subtle professional floating elements */}
                 <motion.div 
                   className="absolute top-16 left-16 w-16 h-16 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-15"
@@ -213,7 +213,7 @@ export default function Dashboard() {
                   }}
                   transition={{ duration: 8, repeat: Infinity }}
                 />
-                
+
                 {/* Additional minimal visual elements */}
                 <motion.div 
                   className="absolute top-1/3 right-8 w-4 h-4 bg-gradient-to-br from-gray-300 to-gray-400 rounded-full opacity-12"
@@ -645,12 +645,12 @@ export default function Dashboard() {
         onOpenChange={setShowMissingApiKeyModal}
         onConfigureApiKey={handleConfigureApiKey}
       />
-      
+
       <ApiKeyModal
         open={showApiKeyModal}
         onOpenChange={setShowApiKeyModal}
       />
-      
+
       {/* Quick Actions FAB */}
       <QuickActions />
     </div>

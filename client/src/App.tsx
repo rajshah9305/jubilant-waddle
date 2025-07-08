@@ -11,12 +11,9 @@ import Projects from "@/pages/projects";
 import Analytics from "@/pages/analytics";
 import Settings from "@/pages/settings";
 import NotFound from "@/pages/not-found";
-import Header from "@/components/layout/header";
-
 function Router() {
   return (
     <div className="min-h-screen bg-background transition-colors duration-300">
-      <Header />
       <Switch>
         <Route path="/" component={Dashboard} />
         <Route path="/studio/:studioType?" component={Studio} />
