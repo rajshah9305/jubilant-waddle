@@ -25,28 +25,29 @@ export function StudioSidebar({ currentStudio, onStudioChange }: StudioSidebarPr
   };
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-white via-gray-50/30 to-white flex flex-col relative overflow-hidden">
-      {/* Enterprise background pattern */}
-      <div className="absolute inset-0 opacity-50" style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+    <div className="w-full h-full bg-gradient-to-br from-white/90 via-white/80 to-white/90 flex flex-col relative overflow-hidden">
+      {/* Enhanced background pattern */}
+      <div className="absolute inset-0 opacity-30" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.03'%3E%3Ccircle cx='40' cy='40' r='2'/%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3Ccircle cx='60' cy='20' r='1'/%3E%3Ccircle cx='20' cy='60' r='1'/%3E%3Ccircle cx='60' cy='60' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }} />
       
       {/* Enhanced header */}
-      <div className="p-8 border-b border-gray-200/60 backdrop-blur-sm relative z-10">
-        <Link href="/">
-          <Button variant="ghost" className="mb-6 p-0 h-auto text-gray-600 hover:text-orange-600 transition-colors duration-300 group">
-            <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
-            <span className="font-semibold">Back to Dashboard</span>
-          </Button>
-        </Link>
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-xl flex items-center justify-center shadow-lg">
-            {React.createElement(enhancedStudioConfig[currentStudio].icon, { className: "w-5 h-5 text-white" })}
+      <div className="p-8 border-b border-white/20 backdrop-blur-sm relative z-10">
+        <div className="flex items-center space-x-4 mb-8">
+          <div className="relative">
+            <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg pulse-glow">
+              {React.createElement(enhancedStudioConfig[currentStudio].icon, { className: "w-6 h-6 text-white" })}
+            </div>
           </div>
           <div>
             <h2 className="text-2xl font-black text-gray-900 leading-tight">
               {enhancedStudioConfig[currentStudio].title}
             </h2>
+            <p className="text-sm text-gray-500 font-medium mt-1">
+              {enhancedStudioConfig[currentStudio].description}
+            </p>
+          </div>
+        </div>
             <p className="text-sm text-gray-600 font-medium">
               {enhancedStudioConfig[currentStudio].description}
             </p>
