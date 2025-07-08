@@ -26,10 +26,11 @@ export class ThreeScene {
     });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
     this.renderer.setClearColor(0x000000, 0);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron (significantly enlarged for better visual correspondence)
-    const geometry = new THREE.IcosahedronGeometry(6.5, 1);
+    // Create main wireframe icosahedron (properly sized to fit in container)
+    const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
       color: 0xff8c00,
       wireframe: true,
@@ -52,7 +53,7 @@ export class ThreeScene {
     pointLight2.position.set(-8, -8, 8);
     this.scene.add(pointLight2);
 
-    this.camera.position.z = 10;
+    this.camera.position.z = 9;
 
     // Start animation
     this.animate();
@@ -83,6 +84,7 @@ export class ThreeScene {
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize(width, height);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
   public dispose() {

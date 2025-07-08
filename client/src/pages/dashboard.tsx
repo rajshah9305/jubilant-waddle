@@ -169,22 +169,24 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Premium 3D Visual Experience - Enlarged for Better Visual Correspondence */}
+            {/* Right Side - Premium 3D Visual Experience - Properly Sized to Prevent Clipping */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[550px] h-[550px] relative">
+              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
                 {/* Premium backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-full blur-3xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-2xl blur-3xl"></div>
                 
-                <HeroCanvas />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <HeroCanvas />
+                </div>
                 
-                {/* Enhanced floating elements with better hierarchy - Scaled for larger canvas */}
+                {/* Enhanced floating elements with proper scaling for 500px container */}
                 <motion.div 
-                  className="absolute top-20 left-20 w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-25"
+                  className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-25"
                   animate={{ 
                     scale: [1, 1.2, 1],
                     opacity: [0.25, 0.4, 0.25]
@@ -192,7 +194,7 @@ export default function Dashboard() {
                   transition={{ duration: 4, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute bottom-32 right-20 w-20 h-20 bg-gradient-to-br from-orange-500 to-red-500 rounded-full opacity-30"
+                  className="absolute bottom-24 right-16 w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full opacity-30"
                   animate={{ 
                     y: [0, -20, 0],
                     scale: [1, 1.1, 1]
@@ -200,7 +202,7 @@ export default function Dashboard() {
                   transition={{ duration: 3, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-1/2 left-6 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20"
+                  className="absolute top-1/2 left-4 w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20"
                   animate={{ 
                     scale: [1, 1.5, 1],
                     opacity: [0.2, 0.5, 0.2]
@@ -208,7 +210,7 @@ export default function Dashboard() {
                   transition={{ duration: 2, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute bottom-20 left-1/3 w-12 h-12 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-25"
+                  className="absolute bottom-16 left-1/3 w-10 h-10 bg-gradient-to-br from-orange-400 to-pink-500 rounded-full opacity-25"
                   animate={{ 
                     scale: [1, 1.3, 1],
                     rotate: [0, 180, 360]
@@ -218,7 +220,7 @@ export default function Dashboard() {
                 
                 {/* Additional premium visual elements */}
                 <motion.div 
-                  className="absolute top-1/3 right-12 w-8 h-8 bg-gradient-to-br from-red-400 to-orange-600 rounded-full opacity-30"
+                  className="absolute top-1/3 right-8 w-6 h-6 bg-gradient-to-br from-red-400 to-orange-600 rounded-full opacity-30"
                   animate={{ 
                     x: [0, 10, 0],
                     opacity: [0.3, 0.6, 0.3]
@@ -226,7 +228,7 @@ export default function Dashboard() {
                   transition={{ duration: 3.5, repeat: Infinity }}
                 />
                 <motion.div 
-                  className="absolute top-3/4 left-28 w-6 h-6 bg-gradient-to-br from-orange-300 to-yellow-500 rounded-full opacity-35"
+                  className="absolute top-3/4 left-20 w-4 h-4 bg-gradient-to-br from-orange-300 to-yellow-500 rounded-full opacity-35"
                   animate={{ 
                     y: [0, -15, 0],
                     scale: [1, 1.4, 1]
