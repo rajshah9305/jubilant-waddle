@@ -182,7 +182,7 @@ export default function Dashboard() {
                     titleSize={112} // Enhanced title size for stronger hierarchy 
                     subtitleSize={24} // Proportional subtitle size
                   />
-                </div>v>
+                </div>
 
                 {/* Ultra-subtle floating elements that don't compete with typography */}
                 <motion.div 
