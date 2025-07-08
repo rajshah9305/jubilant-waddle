@@ -77,7 +77,7 @@ export default function Header() {
               </div>
             </Link>
             
-            {/* Enhanced Enterprise Navigation with Dark Mode & Notifications */}
+            {/* Enhanced Enterprise Navigation with Hover Effects */}
             <div className="hidden md:flex items-center space-x-2 bg-gradient-to-r from-gray-50/90 to-gray-100/90 dark:from-gray-800/90 dark:to-gray-700/90 rounded-2xl p-2 backdrop-blur-lg border border-gray-200/60 dark:border-gray-600/60 shadow-lg">
               {navigation.map((item) => (
                 <Link
@@ -91,7 +91,10 @@ export default function Header() {
                 >
                   <span className="relative z-10">{item.name}</span>
                   {!isActive(item.href) && (
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                    <>
+                      <div className="absolute inset-0 bg-gradient-to-r from-orange-500/10 to-red-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                      <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-orange-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                    </>
                   )}
                 </Link>
               ))}

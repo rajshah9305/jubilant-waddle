@@ -51,11 +51,11 @@ export function UserProfile({ user }: UserProfileProps) {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost"
-          className="relative h-12 w-12 rounded-full border-2 border-transparent hover:border-orange-200 transition-all duration-300"
+          className="relative h-12 w-12 rounded-full border-2 border-transparent hover:border-orange-200 transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/20"
         >
-          <Avatar className="h-10 w-10">
+          <Avatar className="h-10 w-10 hover:scale-105 transition-transform duration-200">
             <AvatarImage src={currentUser.avatar} alt={currentUser.name} />
-            <AvatarFallback className="bg-gradient-to-br from-orange-500 to-red-500 text-white font-bold">
+            <AvatarFallback className="bg-gradient-to-br from-orange-500 to-red-500 text-white font-bold shadow-lg">
               {currentUser.name.split(' ').map(n => n[0]).join('')}
             </AvatarFallback>
           </Avatar>

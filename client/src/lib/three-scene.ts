@@ -29,10 +29,10 @@ export class ThreeScene {
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron (properly sized to fit in container)
+    // Create main wireframe icosahedron with enhanced visual effects
     const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0xff8c00,
+      color: 0xff6a00, // Updated to match brand color scheme
       wireframe: true,
       transparent: true,
       opacity: 0.9
@@ -40,6 +40,18 @@ export class ThreeScene {
     
     this.icosahedron = new THREE.Mesh(geometry, material);
     this.scene.add(this.icosahedron);
+
+    // Add subtle glow effect with additional wireframe layer
+    const glowGeometry = new THREE.IcosahedronGeometry(4.9, 1);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+      color: 0xff6a00,
+      wireframe: true,
+      transparent: true,
+      opacity: 0.3
+    });
+    
+    const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+    this.scene.add(glowMesh);
 
     // Enhanced lighting
     const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
@@ -67,8 +79,13 @@ export class ThreeScene {
     this.animationId = requestAnimationFrame(this.animate);
     
     if (this.icosahedron) {
-      this.icosahedron.rotation.x += 0.008;
-      this.icosahedron.rotation.y += 0.012;
+      // Slower, more elegant rotation
+      this.icosahedron.rotation.x += 0.005;
+      this.icosahedron.rotation.y += 0.008;
+      
+      // Add gentle pulsing effect
+      const time = Date.now() * 0.001;
+      this.icosahedron.scale.setScalar(1 + Math.sin(time * 0.5) * 0.05);
     }
     
     this.renderer.render(this.scene, this.camera);

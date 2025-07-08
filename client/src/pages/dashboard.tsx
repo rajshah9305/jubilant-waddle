@@ -65,7 +65,19 @@ export default function Dashboard() {
       {/* Hero Section - Compact Design */}
       <section className="min-h-[80vh] bg-gradient-to-br from-gray-50 via-orange-50/30 to-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          {/* Mobile Globe Background */}
+          <motion.div 
+            className="lg:hidden absolute inset-0 opacity-20 pointer-events-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.2 }}
+            transition={{ duration: 1 }}
+          >
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80">
+              <HeroCanvas />
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full relative z-10">
             {/* Left Content - Enhanced Premium Design */}
             <motion.div 
               className="space-y-10 relative z-10"
@@ -80,6 +92,16 @@ export default function Dashboard() {
 
 
               <div className="space-y-8">
+                {/* Brand Subtitle */}
+                <motion.p 
+                  className="text-lg text-gray-500 font-medium tracking-wide"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                >
+                  Powered by Cerebras Intelligence
+                </motion.p>
+
                 <motion.h1 
                   className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-gray-900 leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 30 }}
@@ -110,7 +132,7 @@ export default function Dashboard() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
                 >
-                  Unleash your creativity with four specialized AI studios. Generate compelling content, optimize code, analyze documents, and craft engaging stories.
+                  Explore four powerful AI studios to generate content, optimize code, analyze documents, and craft engaging stories.
                 </motion.p>
               </div>
               
@@ -126,7 +148,7 @@ export default function Dashboard() {
                   onClick={() => handleStudioClick('text')}
                 >
                   <span className="flex items-center space-x-3 relative z-10">
-                    <span>Start Creating</span>
+                    <span>Launch Your Studio</span>
                     <motion.div
                       initial={{ x: 0 }}
                       whileHover={{ x: 8 }}
@@ -169,22 +191,23 @@ export default function Dashboard() {
               </motion.div>
             </motion.div>
 
-            {/* Right Side - Premium 3D Visual Experience - Properly Sized to Prevent Clipping */}
+            {/* Right Side - Premium 3D Visual Experience - Responsive and Properly Sized */}
             <motion.div 
               className="hidden lg:flex justify-center items-center relative"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <div className="w-[500px] h-[500px] relative overflow-hidden rounded-2xl">
-                {/* Premium backdrop */}
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-red-500/5 rounded-2xl blur-3xl"></div>
+              <div className="w-[520px] h-[520px] xl:w-[560px] xl:h-[560px] relative overflow-hidden rounded-2xl">
+                {/* Enhanced backdrop with darker background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-50 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/8 via-transparent to-red-500/8 rounded-2xl blur-3xl"></div>
                 
                 <div className="absolute inset-0 flex items-center justify-center">
                   <HeroCanvas />
                 </div>
                 
-                {/* Enhanced floating elements with proper scaling for 500px container */}
+                {/* Enhanced floating elements with proper scaling for 520px container */}
                 <motion.div 
                   className="absolute top-16 left-16 w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full opacity-25"
                   animate={{ 
