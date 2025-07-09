@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+import * as THREE from "three";
 
 export class ThreeScene {
   private scene: THREE.Scene;
@@ -10,53 +10,56 @@ export class ThreeScene {
   constructor(container: HTMLElement) {
     // Scene setup
     this.scene = new THREE.Scene();
-    
+
     // Camera setup
     this.camera = new THREE.PerspectiveCamera(
       75,
       container.clientWidth / container.clientHeight,
       0.1,
-      1000
+      1000,
     );
-    
+
     // Renderer setup
-    this.renderer = new THREE.WebGLRenderer({ 
-      alpha: true, 
-      antialias: true 
+    this.renderer = new THREE.WebGLRenderer({
+      alpha: true,
+      antialias: true,
     });
     this.renderer.setSize(container.clientWidth, container.clientHeight);
     this.renderer.setClearColor(0x000000, 0);
     this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(this.renderer.domElement);
 
-    // Create main wireframe icosahedron with enhanced size for better visual impact
+    // Create main wireframe icosahedron with a darker burnt orange color
     const geometry = new THREE.IcosahedronGeometry(4.8, 1);
     const material = new THREE.MeshBasicMaterial({
-      color: 0x0a0a0a,
+      color: 0xc65d2e, // Dark burnt orange for stronger contrast
       wireframe: true,
       transparent: true,
-      opacity: 0.45
+      opacity: 0.75, // Increased opacity for visibility
     });
-    
+
+    // Create the icosahedron mesh
     this.icosahedron = new THREE.Mesh(geometry, material);
+
+    // Increase the thickness of wireframe geometry
+    const edges = new THREE.EdgesGeometry(geometry); // Generate EdgesGeometry
+    const lineMaterial = new THREE.LineBasicMaterial({
+      color: 0xc65d2e, // Dark burnt orange
+      linewidth: 5, // Increased line thickness for visibility
+    });
+    const lineSegments = new THREE.LineSegments(edges, lineMaterial);
+    this.scene.add(lineSegments);
+
+    // Add main icosahedron
     this.scene.add(this.icosahedron);
 
-    // Minimal ambient lighting for subtle depth
+    // Lighting setup
     const ambientLight = new THREE.AmbientLight(0x1a1a1a, 0.15);
     this.scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0x333333, 0.25);
     directionalLight.position.set(10, 10, 10);
     this.scene.add(directionalLight);
-
-    // Very subtle accent lighting for minimal depth
-    const pointLight1 = new THREE.PointLight(0x2a2a2a, 0.2);
-    pointLight1.position.set(8, 8, 8);
-    this.scene.add(pointLight1);
-
-    const pointLight2 = new THREE.PointLight(0x1f1f1f, 0.15);
-    pointLight2.position.set(-8, -8, 8);
-    this.scene.add(pointLight2);
 
     this.camera.position.z = 12;
 
@@ -65,17 +68,17 @@ export class ThreeScene {
 
     // Handle resize
     this.handleResize = this.handleResize.bind(this);
-    window.addEventListener('resize', this.handleResize);
+    window.addEventListener("resize", this.handleResize);
   }
 
   private animate = () => {
     this.animationId = requestAnimationFrame(this.animate);
-    
+
     if (this.icosahedron) {
       this.icosahedron.rotation.x += 0.004;
       this.icosahedron.rotation.y += 0.006;
     }
-    
+
     this.renderer.render(this.scene, this.camera);
   };
 
@@ -96,13 +99,15 @@ export class ThreeScene {
     if (this.animationId) {
       cancelAnimationFrame(this.animationId);
     }
-    
-    window.removeEventListener('resize', this.handleResize);
-    
+
+    window.removeEventListener("resize", this.handleResize);
+
     if (this.renderer.domElement.parentElement) {
-      this.renderer.domElement.parentElement.removeChild(this.renderer.domElement);
+      this.renderer.domElement.parentElement.removeChild(
+        this.renderer.domElement,
+      );
     }
-    
+
     this.renderer.dispose();
   }
 }
